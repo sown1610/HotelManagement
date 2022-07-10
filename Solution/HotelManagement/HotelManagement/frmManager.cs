@@ -16,5 +16,22 @@ namespace HotelManagement
         {
             InitializeComponent();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccountProfile f = new frmAccountProfile();
+            f.ShowDialog();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin f = new frmAdmin();
+            f.ShowDialog();
+        }
     }
 }

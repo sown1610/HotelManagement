@@ -31,27 +31,28 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.listBill = new System.Windows.Forms.ListView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.cbServices = new System.Windows.Forms.ComboBox();
-            this.btnAddServices = new System.Windows.Forms.Button();
-            this.nmServicesCount = new System.Windows.Forms.NumericUpDown();
-            this.fpnRoom = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.btnDiscount = new System.Windows.Forms.Button();
-            this.nmDiscount = new System.Windows.Forms.NumericUpDown();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchRoom = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nmDiscount = new System.Windows.Forms.NumericUpDown();
+            this.btnDiscount = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.nmServicesCount = new System.Windows.Forms.NumericUpDown();
+            this.btnAddServices = new System.Windows.Forms.Button();
+            this.cbServices = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.fpnRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,20 +71,30 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
             this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
+            // thôngTinCáNhânToolStripMenuItem
+            // 
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
+            // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -93,9 +104,18 @@
             this.panel2.Size = new System.Drawing.Size(317, 279);
             this.panel2.TabIndex = 0;
             // 
+            // listBill
+            // 
+            this.listBill.HideSelection = false;
+            this.listBill.Location = new System.Drawing.Point(3, 3);
+            this.listBill.Name = "listBill";
+            this.listBill.Size = new System.Drawing.Size(311, 273);
+            this.listBill.TabIndex = 0;
+            this.listBill.UseCompatibleStateImageBehavior = false;
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchRoom);
             this.panel3.Controls.Add(this.nmDiscount);
             this.panel3.Controls.Add(this.btnDiscount);
@@ -105,14 +125,48 @@
             this.panel3.Size = new System.Drawing.Size(317, 61);
             this.panel3.TabIndex = 1;
             // 
-            // listBill
+            // cbSwitchTable
             // 
-            this.listBill.HideSelection = false;
-            this.listBill.Location = new System.Drawing.Point(3, 3);
-            this.listBill.Name = "listBill";
-            this.listBill.Size = new System.Drawing.Size(311, 273);
-            this.listBill.TabIndex = 0;
-            this.listBill.UseCompatibleStateImageBehavior = false;
+            this.cbSwitchTable.FormattingEnabled = true;
+            this.cbSwitchTable.Location = new System.Drawing.Point(3, 34);
+            this.cbSwitchTable.Name = "cbSwitchTable";
+            this.cbSwitchTable.Size = new System.Drawing.Size(171, 23);
+            this.cbSwitchTable.TabIndex = 4;
+            // 
+            // btnSwitchRoom
+            // 
+            this.btnSwitchRoom.Location = new System.Drawing.Point(3, 4);
+            this.btnSwitchRoom.Name = "btnSwitchRoom";
+            this.btnSwitchRoom.Size = new System.Drawing.Size(101, 28);
+            this.btnSwitchRoom.TabIndex = 6;
+            this.btnSwitchRoom.Text = "Chuyển phòng";
+            this.btnSwitchRoom.UseVisualStyleBackColor = true;
+            // 
+            // nmDiscount
+            // 
+            this.nmDiscount.Location = new System.Drawing.Point(180, 35);
+            this.nmDiscount.Name = "nmDiscount";
+            this.nmDiscount.Size = new System.Drawing.Size(64, 23);
+            this.nmDiscount.TabIndex = 4;
+            this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.Location = new System.Drawing.Point(180, 4);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(64, 28);
+            this.btnDiscount.TabIndex = 5;
+            this.btnDiscount.Text = "Giảm giá";
+            this.btnDiscount.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(250, 4);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(64, 54);
+            this.btnCheckOut.TabIndex = 4;
+            this.btnCheckOut.Text = "Thanh toán";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -124,31 +178,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(317, 59);
             this.panel4.TabIndex = 2;
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(3, 3);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(203, 23);
-            this.cbCategory.TabIndex = 0;
-            // 
-            // cbServices
-            // 
-            this.cbServices.FormattingEnabled = true;
-            this.cbServices.Location = new System.Drawing.Point(3, 32);
-            this.cbServices.Name = "cbServices";
-            this.cbServices.Size = new System.Drawing.Size(203, 23);
-            this.cbServices.TabIndex = 1;
-            // 
-            // btnAddServices
-            // 
-            this.btnAddServices.Location = new System.Drawing.Point(212, 2);
-            this.btnAddServices.Name = "btnAddServices";
-            this.btnAddServices.Size = new System.Drawing.Size(64, 54);
-            this.btnAddServices.TabIndex = 2;
-            this.btnAddServices.Text = "Thêm dịch vụ";
-            this.btnAddServices.UseVisualStyleBackColor = true;
             // 
             // nmServicesCount
             // 
@@ -167,55 +196,37 @@
             0,
             0});
             // 
+            // btnAddServices
+            // 
+            this.btnAddServices.Location = new System.Drawing.Point(212, 2);
+            this.btnAddServices.Name = "btnAddServices";
+            this.btnAddServices.Size = new System.Drawing.Size(64, 54);
+            this.btnAddServices.TabIndex = 2;
+            this.btnAddServices.Text = "Thêm dịch vụ";
+            this.btnAddServices.UseVisualStyleBackColor = true;
+            // 
+            // cbServices
+            // 
+            this.cbServices.FormattingEnabled = true;
+            this.cbServices.Location = new System.Drawing.Point(3, 32);
+            this.cbServices.Name = "cbServices";
+            this.cbServices.Size = new System.Drawing.Size(203, 23);
+            this.cbServices.TabIndex = 1;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(3, 3);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(203, 23);
+            this.cbCategory.TabIndex = 0;
+            // 
             // fpnRoom
             // 
             this.fpnRoom.Location = new System.Drawing.Point(12, 27);
             this.fpnRoom.Name = "fpnRoom";
             this.fpnRoom.Size = new System.Drawing.Size(453, 411);
             this.fpnRoom.TabIndex = 4;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Location = new System.Drawing.Point(250, 4);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(64, 54);
-            this.btnCheckOut.TabIndex = 4;
-            this.btnCheckOut.Text = "Thanh toán";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // btnDiscount
-            // 
-            this.btnDiscount.Location = new System.Drawing.Point(180, 4);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(64, 28);
-            this.btnDiscount.TabIndex = 5;
-            this.btnDiscount.Text = "Giảm giá";
-            this.btnDiscount.UseVisualStyleBackColor = true;
-            // 
-            // nmDiscount
-            // 
-            this.nmDiscount.Location = new System.Drawing.Point(180, 35);
-            this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(64, 23);
-            this.nmDiscount.TabIndex = 4;
-            this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSwitchRoom
-            // 
-            this.btnSwitchRoom.Location = new System.Drawing.Point(3, 4);
-            this.btnSwitchRoom.Name = "btnSwitchRoom";
-            this.btnSwitchRoom.Size = new System.Drawing.Size(101, 28);
-            this.btnSwitchRoom.TabIndex = 6;
-            this.btnSwitchRoom.Text = "Chuyển phòng";
-            this.btnSwitchRoom.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 23);
-            this.comboBox1.TabIndex = 4;
             // 
             // frmManager
             // 
@@ -235,9 +246,9 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +271,8 @@
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.NumericUpDown nmDiscount;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.Button btnSwitchRoom;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
     }
 }
