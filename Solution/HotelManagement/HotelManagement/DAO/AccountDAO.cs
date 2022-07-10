@@ -19,7 +19,7 @@ namespace HotelManagement.DAO
         private AccountDAO() { }
         public bool Login(string user, string pass)
         {
-            string query = "SELECT * from Account where username = 'sa' and password = 'sa'";
+            string query = "SELECT * from Account where username = '"+user+"' and password = '"+pass+"'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
             
