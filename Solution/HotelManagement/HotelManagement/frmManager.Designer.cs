@@ -38,11 +38,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchRoom = new System.Windows.Forms.Button();
-            this.nmDiscount = new System.Windows.Forms.NumericUpDown();
+            this.numDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nmServicesCount = new System.Windows.Forms.NumericUpDown();
+            this.numServicesCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddServices = new System.Windows.Forms.Button();
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
@@ -50,9 +50,9 @@
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numServicesCount)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -117,7 +117,7 @@
             // 
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchRoom);
-            this.panel3.Controls.Add(this.nmDiscount);
+            this.panel3.Controls.Add(this.numDiscount);
             this.panel3.Controls.Add(this.btnDiscount);
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(471, 377);
@@ -142,13 +142,13 @@
             this.btnSwitchRoom.Text = "Chuyển phòng";
             this.btnSwitchRoom.UseVisualStyleBackColor = true;
             // 
-            // nmDiscount
+            // numDiscount
             // 
-            this.nmDiscount.Location = new System.Drawing.Point(180, 35);
-            this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(64, 23);
-            this.nmDiscount.TabIndex = 4;
-            this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numDiscount.Location = new System.Drawing.Point(180, 35);
+            this.numDiscount.Name = "numDiscount";
+            this.numDiscount.Size = new System.Drawing.Size(64, 23);
+            this.numDiscount.TabIndex = 4;
+            this.numDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDiscount
             // 
@@ -170,7 +170,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.nmServicesCount);
+            this.panel4.Controls.Add(this.numServicesCount);
             this.panel4.Controls.Add(this.btnAddServices);
             this.panel4.Controls.Add(this.cbServices);
             this.panel4.Controls.Add(this.cbCategory);
@@ -179,18 +179,18 @@
             this.panel4.Size = new System.Drawing.Size(317, 59);
             this.panel4.TabIndex = 2;
             // 
-            // nmServicesCount
+            // numServicesCount
             // 
-            this.nmServicesCount.Location = new System.Drawing.Point(279, 20);
-            this.nmServicesCount.Minimum = new decimal(new int[] {
+            this.numServicesCount.Location = new System.Drawing.Point(279, 20);
+            this.numServicesCount.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.nmServicesCount.Name = "nmServicesCount";
-            this.nmServicesCount.Size = new System.Drawing.Size(35, 23);
-            this.nmServicesCount.TabIndex = 3;
-            this.nmServicesCount.Value = new decimal(new int[] {
+            this.numServicesCount.Name = "numServicesCount";
+            this.numServicesCount.Size = new System.Drawing.Size(35, 23);
+            this.numServicesCount.TabIndex = 3;
+            this.numServicesCount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -246,9 +246,9 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numServicesCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,11 +266,11 @@
         private System.Windows.Forms.ComboBox cbServices;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddServices;
-        private System.Windows.Forms.NumericUpDown nmServicesCount;
+        private System.Windows.Forms.NumericUpDown numServicesCount;
         private System.Windows.Forms.FlowLayoutPanel fpnRoom;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnDiscount;
-        private System.Windows.Forms.NumericUpDown nmDiscount;
+        private System.Windows.Forms.NumericUpDown numDiscount;
         private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.Button btnSwitchRoom;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
