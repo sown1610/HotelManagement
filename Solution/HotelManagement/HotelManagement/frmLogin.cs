@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +25,25 @@ namespace HotelManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmManager f = new frmManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string user = txtUser.Text;
+            string pass = txtPass.Text;
+            if (Login(user, pass))
+            {
+                frmManager f = new frmManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!!!");
+            }
+            
+        }
+        bool Login(string user, string pass) 
+        {
+
+            return AccountDAO.Instance.Login(user, pass);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

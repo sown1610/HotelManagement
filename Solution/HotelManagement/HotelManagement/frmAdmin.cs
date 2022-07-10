@@ -17,17 +17,10 @@ namespace HotelManagement
         public frmAdmin()
         {
             InitializeComponent();
-            LoadAccountList();
+            
         }
 
-        private void LoadAccountList()
-        {
-            string query = "exec USP_GetAccountByUserName @username";
-            DataProvider provider = new DataProvider();
-            dtgAccount.DataSource = provider.ExecuteQuery(query,new object[] {"sa"});
-
-
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {

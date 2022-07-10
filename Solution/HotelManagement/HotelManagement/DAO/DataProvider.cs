@@ -10,7 +10,23 @@ namespace HotelManagement.DAO
 {
     public class DataProvider
     {
+        private static DataProvider instance;//ctrl + R + E
+
         private string con = "Data Source=.\\;Initial Catalog=HotelManagement;Integrated Security=True";
+
+        public static DataProvider Instance
+        {
+            get
+            {
+                if (instance == null) instance = new DataProvider();
+                return DataProvider.instance;
+            }
+            private set { DataProvider.instance = value; }
+        }
+        private DataProvider()
+        {
+
+        }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -20,7 +36,7 @@ namespace HotelManagement.DAO
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
 
-                if(parameter != null)
+                if (parameter != null)
                 {
                     string[] listPara = query.Split(' ');
                     int i = 0;
@@ -28,7 +44,7 @@ namespace HotelManagement.DAO
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item,parameter[i]);
+                            command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
                     }
