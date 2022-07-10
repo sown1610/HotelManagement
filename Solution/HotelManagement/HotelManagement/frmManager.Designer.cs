@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,18 +40,19 @@
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.btnAddServices = new System.Windows.Forms.Button();
             this.nmServicesCount = new System.Windows.Forms.NumericUpDown();
+            this.fpnRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnDiscount = new System.Windows.Forms.Button();
+            this.nmDiscount = new System.Windows.Forms.NumericUpDown();
+            this.btnSwitchRoom = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 411);
-            this.panel1.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -95,6 +95,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.btnSwitchRoom);
+            this.panel3.Controls.Add(this.nmDiscount);
+            this.panel3.Controls.Add(this.btnDiscount);
+            this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(471, 377);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(317, 61);
@@ -125,7 +130,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(3, 3);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(214, 23);
+            this.cbCategory.Size = new System.Drawing.Size(203, 23);
             this.cbCategory.TabIndex = 0;
             // 
             // cbServices
@@ -133,16 +138,16 @@
             this.cbServices.FormattingEnabled = true;
             this.cbServices.Location = new System.Drawing.Point(3, 32);
             this.cbServices.Name = "cbServices";
-            this.cbServices.Size = new System.Drawing.Size(214, 23);
+            this.cbServices.Size = new System.Drawing.Size(203, 23);
             this.cbServices.TabIndex = 1;
             // 
             // btnAddServices
             // 
-            this.btnAddServices.Location = new System.Drawing.Point(223, 2);
+            this.btnAddServices.Location = new System.Drawing.Point(212, 2);
             this.btnAddServices.Name = "btnAddServices";
-            this.btnAddServices.Size = new System.Drawing.Size(53, 54);
+            this.btnAddServices.Size = new System.Drawing.Size(64, 54);
             this.btnAddServices.TabIndex = 2;
-            this.btnAddServices.Text = "button1";
+            this.btnAddServices.Text = "Thêm dịch vụ";
             this.btnAddServices.UseVisualStyleBackColor = true;
             // 
             // nmServicesCount
@@ -162,15 +167,65 @@
             0,
             0});
             // 
+            // fpnRoom
+            // 
+            this.fpnRoom.Location = new System.Drawing.Point(12, 27);
+            this.fpnRoom.Name = "fpnRoom";
+            this.fpnRoom.Size = new System.Drawing.Size(453, 411);
+            this.fpnRoom.TabIndex = 4;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(250, 4);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(64, 54);
+            this.btnCheckOut.TabIndex = 4;
+            this.btnCheckOut.Text = "Thanh toán";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.Location = new System.Drawing.Point(180, 4);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(64, 28);
+            this.btnDiscount.TabIndex = 5;
+            this.btnDiscount.Text = "Giảm giá";
+            this.btnDiscount.UseVisualStyleBackColor = true;
+            // 
+            // nmDiscount
+            // 
+            this.nmDiscount.Location = new System.Drawing.Point(180, 35);
+            this.nmDiscount.Name = "nmDiscount";
+            this.nmDiscount.Size = new System.Drawing.Size(64, 23);
+            this.nmDiscount.TabIndex = 4;
+            this.nmDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSwitchRoom
+            // 
+            this.btnSwitchRoom.Location = new System.Drawing.Point(3, 4);
+            this.btnSwitchRoom.Name = "btnSwitchRoom";
+            this.btnSwitchRoom.Size = new System.Drawing.Size(101, 28);
+            this.btnSwitchRoom.TabIndex = 6;
+            this.btnSwitchRoom.Text = "Chuyển phòng";
+            this.btnSwitchRoom.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(3, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(171, 23);
+            this.comboBox1.TabIndex = 4;
+            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fpnRoom);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmManager";
@@ -179,16 +234,16 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmServicesCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
@@ -201,5 +256,11 @@
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddServices;
         private System.Windows.Forms.NumericUpDown nmServicesCount;
+        private System.Windows.Forms.FlowLayoutPanel fpnRoom;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button btnDiscount;
+        private System.Windows.Forms.NumericUpDown nmDiscount;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnSwitchRoom;
     }
 }
