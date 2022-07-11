@@ -13,7 +13,6 @@ namespace HotelManagement.DTO
         private int roomid;
         private int orderid;
         private int serviceid;
-        private double totalprice;
 
         
 
@@ -21,14 +20,12 @@ namespace HotelManagement.DTO
         public int Roomid { get => roomid; set => roomid = value; }
         public int Orderid { get => orderid; set => orderid = value; }
         public int Serviceid { get => serviceid; set => serviceid = value; }
-        public double Totalprice { get => totalprice; set => totalprice = value; }
-        public OrderDetail(int detailid, int roomid, int orderid, int serviceid, double totalprice)
+        public OrderDetail(int detailid, int roomid, int orderid, int serviceid)
         {
             this.Detailid = detailid;
             this.Roomid = roomid;
             this.Orderid = orderid;
             this.Serviceid = serviceid;
-            this.Totalprice = totalprice;
             
         }
         public OrderDetail(DataRow row)
@@ -37,7 +34,6 @@ namespace HotelManagement.DTO
             this.Roomid = (int)row["roomid"];
             this.Orderid = (int)row["orderid"];
             this.Serviceid = (int)row["serviceid"];
-            this.Totalprice = (double)row["totalprice"];
         }
     }
 }

@@ -50,11 +50,13 @@ namespace HotelManagement
         void ShowOrder(int id)
         {
             listBill.Items.Clear();
-            List<OrderDetail> listOrderDetail = OrderDetailDAO.Instance.GetListOrderDetail(OrderDAO.Instance.GetUncheckBillIDByRoomID(id));
-            foreach(OrderDetail item in listOrderDetail)
+            List<Menu> listOrderDetail = MenuDAO.Instance.GetListMenuByRoom(id);
+            foreach(Menu item in listOrderDetail)
             {
-                ListViewItem lsvItem = new ListViewItem(item.Serviceid.ToString());
-                lsvItem.SubItems.Add(item.Totalprice.ToString());
+                ListViewItem lsvItem = new ListViewItem(item.Servicename.ToString());
+                lsvItem.SubItems.Add(item.Serviceprice.ToString());
+                lsvItem.SubItems.Add(item.Roomname.ToString());
+                lsvItem.SubItems.Add(item.Roomprice.ToString());
                 listBill.Items.Add(lsvItem);
             }
         }

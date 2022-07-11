@@ -49,6 +49,8 @@
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,7 +112,9 @@
             // 
             this.listBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ServiceID,
-            this.TotalPrice});
+            this.TotalPrice,
+            this.columnHeader1,
+            this.columnHeader2});
             this.listBill.GridLines = true;
             this.listBill.HideSelection = false;
             this.listBill.Location = new System.Drawing.Point(3, 3);
@@ -122,11 +126,11 @@
             // 
             // ServiceID
             // 
-            this.ServiceID.Text = "ServiceID";
+            this.ServiceID.Text = "Tên dịch vụ";
             // 
             // TotalPrice
             // 
-            this.TotalPrice.Text = "TotalPrice";
+            this.TotalPrice.Text = "Giá dịch vụ";
             // 
             // panel3
             // 
@@ -244,6 +248,14 @@
             this.flpRoom.Size = new System.Drawing.Size(453, 411);
             this.flpRoom.TabIndex = 4;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên phòng";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Giá phòng";
+            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -292,5 +304,7 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader ServiceID;
         private System.Windows.Forms.ColumnHeader TotalPrice;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

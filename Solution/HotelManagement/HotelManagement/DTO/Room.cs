@@ -12,24 +12,24 @@ namespace HotelManagement.DTO
         
 
 
-        public Room(int roomid, string roomname, int categoryid, string status, double price)
+        public Room(int roomid, string roomname, int categoryid, string status, double roomprice)
         {
             this.Roomid = roomid;
             this.Roomname = roomname;   
             this.Categoryid = categoryid;
             this.Status = status;
-            this.Price = price;
+            this.Roomprice = roomprice;
         }
         private int roomid;
         private string roomname;
         private int categoryid;
         private string status;
-        private double price;
+        private double roomprice;
 
         
         public string Status { get => status; set => status = value; }
         public int Categoryid { get => categoryid; set => categoryid = value; }
-        public double Price { get => price; set => price = value; }
+        public double Roomprice { get => roomprice; set => roomprice = value; }
         public int Roomid { get => roomid; set => roomid = value; }
         public string Roomname { get => roomname; set => roomname = value; }
 
@@ -39,7 +39,7 @@ namespace HotelManagement.DTO
             this.Roomname = row["roomname"].ToString();
             this.Categoryid = (int)row["categoryid"];
             this.Status = row["status"].ToString();
-            this.Price = (double)row["price"];
+            this.Roomprice = (double)row["roomprice"];
         }
     }
 }
