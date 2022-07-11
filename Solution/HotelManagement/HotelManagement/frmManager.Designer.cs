@@ -106,12 +106,14 @@
             // 
             // listBill
             // 
+            this.listBill.GridLines = true;
             this.listBill.HideSelection = false;
             this.listBill.Location = new System.Drawing.Point(3, 3);
             this.listBill.Name = "listBill";
             this.listBill.Size = new System.Drawing.Size(311, 273);
             this.listBill.TabIndex = 0;
             this.listBill.UseCompatibleStateImageBehavior = false;
+            this.listBill.View = System.Windows.Forms.View.List;
             // 
             // panel3
             // 
@@ -223,6 +225,7 @@
             // 
             // flpRoom
             // 
+            this.flpRoom.AutoScroll = true;
             this.flpRoom.Location = new System.Drawing.Point(12, 27);
             this.flpRoom.Name = "flpRoom";
             this.flpRoom.Size = new System.Drawing.Size(453, 411);

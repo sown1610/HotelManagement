@@ -31,6 +31,8 @@ namespace HotelManagement
                     Height = RoomDAO.RoomHeight
                 };
                 btn.Text = item.Roomname +Environment.NewLine + item.Status;
+                btn.Click += btn_Click;
+                btn.Tag= item;
                 switch (item.Status)
                 {
                     case "Trống":
@@ -43,8 +45,17 @@ namespace HotelManagement
                 flpRoom.Controls.Add(btn);
             }
         }
-        #endregion
 
+        void ShowBill(int id)
+        {
+
+        }
+        #endregion
+         void btn_Click(object? sender, EventArgs e)
+        {
+            int roomID =(sender as Room).Roomid;
+            ShowBill(roomID);
+        }
         #region Events 
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
