@@ -120,6 +120,14 @@
             this.listBill.UseCompatibleStateImageBehavior = false;
             this.listBill.View = System.Windows.Forms.View.Details;
             // 
+            // ServiceID
+            // 
+            this.ServiceID.Text = "ServiceID";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.Text = "TotalPrice";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.cbSwitchTable);
