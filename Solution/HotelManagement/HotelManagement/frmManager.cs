@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelManagement.DAO;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,35 @@ namespace HotelManagement
         public frmManager()
         {
             InitializeComponent();
+            LoadRoom();
         }
+        #region Method
+        void LoadRoom()
+        {
+            List<Room> roomList = RoomDAO.Instance.LoadRoomList();
+            foreach (Room item in roomList)
+            {
+                Button btn = new Button()
+                {
+                    Width = RoomDAO.RoomWidth,
+                    Height = RoomDAO.RoomHeight
+                };
+                btn.Text = item.Roomname +Environment.NewLine + item.Status;
+                switch (item.Status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.LightCyan;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+                flpRoom.Controls.Add(btn);
+            }
+        }
+        #endregion
+
+        #region Events 
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -33,5 +63,6 @@ namespace HotelManagement
             frmAdmin f = new frmAdmin();
             f.ShowDialog();
         }
+        #endregion
     }
 }

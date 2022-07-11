@@ -46,7 +46,7 @@
             this.btnAddServices = new System.Windows.Forms.Button();
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.fpnRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -221,19 +221,19 @@
             this.cbCategory.Size = new System.Drawing.Size(203, 23);
             this.cbCategory.TabIndex = 0;
             // 
-            // fpnRoom
+            // flpRoom
             // 
-            this.fpnRoom.Location = new System.Drawing.Point(12, 27);
-            this.fpnRoom.Name = "fpnRoom";
-            this.fpnRoom.Size = new System.Drawing.Size(453, 411);
-            this.fpnRoom.TabIndex = 4;
+            this.flpRoom.Location = new System.Drawing.Point(12, 27);
+            this.flpRoom.Name = "flpRoom";
+            this.flpRoom.Size = new System.Drawing.Size(453, 411);
+            this.flpRoom.TabIndex = 4;
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.fpnRoom);
+            this.Controls.Add(this.flpRoom);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -267,7 +267,7 @@
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddServices;
         private System.Windows.Forms.NumericUpDown numServicesCount;
-        private System.Windows.Forms.FlowLayoutPanel fpnRoom;
+        private System.Windows.Forms.FlowLayoutPanel flpRoom;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.NumericUpDown numDiscount;

@@ -19,8 +19,8 @@ namespace HotelManagement.DAO
         private AccountDAO() { }
         public bool Login(string user, string pass)
         {
-            string query = "SELECT * from Account where username = '"+user+"' and password = '"+pass+"'";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_Login @username , @password";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {user,pass});
             return result.Rows.Count > 0;
             
         }
