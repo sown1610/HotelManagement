@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HotelManagement
 {
     public partial class frmManager : Form
@@ -46,15 +47,22 @@ namespace HotelManagement
             }
         }
 
-        void ShowBill(int id)
+        void ShowOrder(int id)
         {
-
+            listBill.Items.Clear();
+            List<OrderDetail> listOrderDetail = OrderDetailDAO.Instance.GetListOrderDetail(OrderDAO.Instance.GetUncheckBillIDByRoomID(id));
+            foreach(OrderDetail item in listOrderDetail)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.Serviceid.ToString());
+                lsvItem.SubItems.Add(item.Totalprice.ToString());
+                listBill.Items.Add(lsvItem);
+            }
         }
         #endregion
          void btn_Click(object? sender, EventArgs e)
         {
-            int roomID =(sender as Room).Roomid;
-            ShowBill(roomID);
+            int roomID =((sender as Button).Tag as Room).Roomid;
+            ShowOrder(roomID);
         }
         #region Events 
 

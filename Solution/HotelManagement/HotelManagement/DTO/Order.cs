@@ -28,7 +28,11 @@ namespace HotelManagement.DTO
         {
             this.Orderid = (int)row["orderid"];
             this.Datecheckin = (DateTime?)row["datecheckin"];
-            this.Datecheckout = (DateTime?)row["datecheckout"]; ;
+            var datecheckoutTemp = row["datecheckout"];
+            if(datecheckoutTemp.ToString() != "")
+            {
+                this.datecheckout = (DateTime?)datecheckoutTemp;
+            }
             this.IdRoom = (int)row["idRoom"];
             this.Status = (int)row["status"];
 

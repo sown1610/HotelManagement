@@ -35,6 +35,8 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listBill = new System.Windows.Forms.ListView();
+            this.ServiceID = new System.Windows.Forms.ColumnHeader();
+            this.TotalPrice = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchRoom = new System.Windows.Forms.Button();
@@ -106,6 +108,9 @@
             // 
             // listBill
             // 
+            this.listBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ServiceID,
+            this.TotalPrice});
             this.listBill.GridLines = true;
             this.listBill.HideSelection = false;
             this.listBill.Location = new System.Drawing.Point(3, 3);
@@ -113,7 +118,7 @@
             this.listBill.Size = new System.Drawing.Size(311, 273);
             this.listBill.TabIndex = 0;
             this.listBill.UseCompatibleStateImageBehavior = false;
-            this.listBill.View = System.Windows.Forms.View.List;
+            this.listBill.View = System.Windows.Forms.View.Details;
             // 
             // panel3
             // 
@@ -277,5 +282,7 @@
         private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.Button btnSwitchRoom;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader ServiceID;
+        private System.Windows.Forms.ColumnHeader TotalPrice;
     }
 }
