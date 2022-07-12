@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,14 +52,19 @@ namespace HotelManagement
         {
             listBill.Items.Clear();
             List<Menu> listOrderDetail = MenuDAO.Instance.GetListMenuByRoom(id);
+            double totalPrice = 0;
             foreach(Menu item in listOrderDetail)
             {
                 ListViewItem lsvItem = new ListViewItem(item.Servicename.ToString());
                 lsvItem.SubItems.Add(item.Serviceprice.ToString());
                 lsvItem.SubItems.Add(item.Roomname.ToString());
                 lsvItem.SubItems.Add(item.Roomprice.ToString());
+                totalPrice += item.Serviceprice + item.Roomprice;
                 listBill.Items.Add(lsvItem);
+                
             }
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotal.Text = totalPrice.ToString("c",culture);
         }
         #endregion
          void btn_Click(object? sender, EventArgs e)

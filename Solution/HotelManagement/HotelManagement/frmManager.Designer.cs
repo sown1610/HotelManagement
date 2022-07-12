@@ -37,7 +37,11 @@
             this.listBill = new System.Windows.Forms.ListView();
             this.ServiceID = new System.Windows.Forms.ColumnHeader();
             this.TotalPrice = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchRoom = new System.Windows.Forms.Button();
             this.numDiscount = new System.Windows.Forms.NumericUpDown();
@@ -49,8 +53,6 @@
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,7 +68,7 @@
             this.thôngTinTàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(905, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,9 +119,9 @@
             this.columnHeader2});
             this.listBill.GridLines = true;
             this.listBill.HideSelection = false;
-            this.listBill.Location = new System.Drawing.Point(3, 3);
+            this.listBill.Location = new System.Drawing.Point(-1, 3);
             this.listBill.Name = "listBill";
-            this.listBill.Size = new System.Drawing.Size(311, 273);
+            this.listBill.Size = new System.Drawing.Size(367, 273);
             this.listBill.TabIndex = 0;
             this.listBill.UseCompatibleStateImageBehavior = false;
             this.listBill.View = System.Windows.Forms.View.Details;
@@ -127,13 +129,27 @@
             // ServiceID
             // 
             this.ServiceID.Text = "Tên dịch vụ";
+            this.ServiceID.Width = 90;
             // 
             // TotalPrice
             // 
             this.TotalPrice.Text = "Giá dịch vụ";
+            this.TotalPrice.Width = 90;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên phòng";
+            this.columnHeader1.Width = 90;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Giá phòng";
+            this.columnHeader2.Width = 90;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.txtTotal);
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchRoom);
             this.panel3.Controls.Add(this.numDiscount);
@@ -141,15 +157,38 @@
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(471, 377);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 61);
+            this.panel3.Size = new System.Drawing.Size(367, 61);
             this.panel3.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(123, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Tổng tiền";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtTotal.Location = new System.Drawing.Point(108, 31);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(116, 25);
+            this.txtTotal.TabIndex = 7;
+            this.txtTotal.Text = "0";
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(3, 34);
+            this.cbSwitchTable.Location = new System.Drawing.Point(3, 32);
             this.cbSwitchTable.Name = "cbSwitchTable";
-            this.cbSwitchTable.Size = new System.Drawing.Size(171, 23);
+            this.cbSwitchTable.Size = new System.Drawing.Size(101, 23);
             this.cbSwitchTable.TabIndex = 4;
             // 
             // btnSwitchRoom
@@ -163,7 +202,7 @@
             // 
             // numDiscount
             // 
-            this.numDiscount.Location = new System.Drawing.Point(180, 35);
+            this.numDiscount.Location = new System.Drawing.Point(230, 33);
             this.numDiscount.Name = "numDiscount";
             this.numDiscount.Size = new System.Drawing.Size(64, 23);
             this.numDiscount.TabIndex = 4;
@@ -171,7 +210,7 @@
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Location = new System.Drawing.Point(180, 4);
+            this.btnDiscount.Location = new System.Drawing.Point(230, 3);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(64, 28);
             this.btnDiscount.TabIndex = 5;
@@ -180,7 +219,7 @@
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(250, 4);
+            this.btnCheckOut.Location = new System.Drawing.Point(300, 4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(64, 54);
             this.btnCheckOut.TabIndex = 4;
@@ -195,12 +234,12 @@
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(471, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(317, 59);
+            this.panel4.Size = new System.Drawing.Size(367, 59);
             this.panel4.TabIndex = 2;
             // 
             // numServicesCount
             // 
-            this.numServicesCount.Location = new System.Drawing.Point(279, 20);
+            this.numServicesCount.Location = new System.Drawing.Point(308, 20);
             this.numServicesCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -217,7 +256,7 @@
             // 
             // btnAddServices
             // 
-            this.btnAddServices.Location = new System.Drawing.Point(212, 2);
+            this.btnAddServices.Location = new System.Drawing.Point(228, 3);
             this.btnAddServices.Name = "btnAddServices";
             this.btnAddServices.Size = new System.Drawing.Size(64, 54);
             this.btnAddServices.TabIndex = 2;
@@ -248,19 +287,11 @@
             this.flpRoom.Size = new System.Drawing.Size(453, 411);
             this.flpRoom.TabIndex = 4;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên phòng";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Giá phòng";
-            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(905, 515);
             this.Controls.Add(this.flpRoom);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -274,6 +305,7 @@
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numServicesCount)).EndInit();
@@ -306,5 +338,7 @@
         private System.Windows.Forms.ColumnHeader TotalPrice;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label1;
     }
 }
