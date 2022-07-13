@@ -35,7 +35,6 @@ namespace HotelManagement.DTO
             this.serviceprice = (double)row["serviceprice"];
             this.roomname = (string)row["roomname"];
             this.roomprice = (double)row["roomprice"];
-
         }
     }
 }

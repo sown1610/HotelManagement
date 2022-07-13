@@ -20,10 +20,24 @@ namespace HotelManagement
         {
             InitializeComponent();
             LoadRoom();
+            LoadCategory();
+        }
+        void LoadCategory()
+        {
+            List<Category> categoryList = CategoryDAO.Instance.GetListCategory();
+            cbCategory.DataSource = categoryList;
+            cbCategory.DisplayMember = "categoryname";
+        }
+        void LoadRoomByCategoryID(int id)
+        {
+            List<Room> listroom = RoomDAO.Instance.GetRoomByID(id);
+            cbRoom.DataSource = listroom;
+            cbRoom.DisplayMember = "roomname";
         }
         #region Method
         void LoadRoom()
-        {
+        {   
+           
             List<Room> roomList = RoomDAO.Instance.LoadRoomList();
             foreach (Room item in roomList)
             {
@@ -46,6 +60,7 @@ namespace HotelManagement
                 }
                 flpRoom.Controls.Add(btn);
             }
+           
         }
 
         void ShowOrder(int id)
@@ -70,7 +85,9 @@ namespace HotelManagement
          void btn_Click(object? sender, EventArgs e)
         {
             int roomID =((sender as Button).Tag as Room).Roomid;
+            listBill.Tag=(sender as Button).Tag;
             ShowOrder(roomID);
+
         }
         #region Events 
 
@@ -91,5 +108,18 @@ namespace HotelManagement
             f.ShowDialog();
         }
         #endregion
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+            if(cb.SelectedItem == null)
+            {
+                return;
+            }
+            Category selected = cb.SelectedItem as Category;
+            id = selected.CategoryID;
+            LoadRoomByCategoryID(id);
+        }
     }
 }

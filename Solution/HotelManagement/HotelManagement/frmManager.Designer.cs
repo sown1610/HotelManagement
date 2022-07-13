@@ -50,7 +50,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.numServicesCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddServices = new System.Windows.Forms.Button();
-            this.cbServices = new System.Windows.Forms.ComboBox();
+            this.cbRoom = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
@@ -230,7 +230,7 @@
             // 
             this.panel4.Controls.Add(this.numServicesCount);
             this.panel4.Controls.Add(this.btnAddServices);
-            this.panel4.Controls.Add(this.cbServices);
+            this.panel4.Controls.Add(this.cbRoom);
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(471, 27);
             this.panel4.Name = "panel4";
@@ -263,13 +263,13 @@
             this.btnAddServices.Text = "Thêm dịch vụ";
             this.btnAddServices.UseVisualStyleBackColor = true;
             // 
-            // cbServices
+            // cbRoom
             // 
-            this.cbServices.FormattingEnabled = true;
-            this.cbServices.Location = new System.Drawing.Point(3, 32);
-            this.cbServices.Name = "cbServices";
-            this.cbServices.Size = new System.Drawing.Size(203, 23);
-            this.cbServices.TabIndex = 1;
+            this.cbRoom.FormattingEnabled = true;
+            this.cbRoom.Location = new System.Drawing.Point(3, 32);
+            this.cbRoom.Name = "cbRoom";
+            this.cbRoom.Size = new System.Drawing.Size(203, 23);
+            this.cbRoom.TabIndex = 1;
             // 
             // cbCategory
             // 
@@ -278,6 +278,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(203, 23);
             this.cbCategory.TabIndex = 0;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // flpRoom
             // 
@@ -323,7 +324,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListView listBill;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cbServices;
+        private System.Windows.Forms.ComboBox cbRoom;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Button btnAddServices;
         private System.Windows.Forms.NumericUpDown numServicesCount;
