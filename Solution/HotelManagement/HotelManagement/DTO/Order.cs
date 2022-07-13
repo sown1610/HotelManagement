@@ -9,12 +9,12 @@ namespace HotelManagement.DTO
 {
     public class Order
     {
-        private int orderid;
+        public int orderid;
         private DateTime? datecheckin;
         private DateTime? datecheckout;
         private int idRoom;
         private int status;
-
+       
         public Order(int orderid, DateTime? datecheckin, DateTime? datecheckout, int idRoom, int status)
         {
             this.Orderid = orderid;
@@ -22,7 +22,7 @@ namespace HotelManagement.DTO
             this.Datecheckout = datecheckout;
             this.IdRoom = idRoom;
             this.Status = status;
-         
+            
         }
         public Order(DataRow row)
         {
@@ -35,6 +35,7 @@ namespace HotelManagement.DTO
             }
             this.IdRoom = (int)row["idRoom"];
             this.Status = (int)row["status"];
+            
 
         }
 
@@ -43,5 +44,8 @@ namespace HotelManagement.DTO
         public DateTime? Datecheckout { get => datecheckout; set => datecheckout = value; }
         public int IdRoom { get => idRoom; set => idRoom = value; }
         public int Status { get => status; set => status = value; }
+        
     }
+    
+
 }

@@ -29,5 +29,23 @@ namespace HotelManagement.DAO
             }
             return servicesList;
         }
+        public int GetServiceIDByOrdDetail(int detailid)
+        {   
+            string query = String.Format("SELECT serviceid FROM dbo.OrderDetail WHERE detailid = {0} ",detailid);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+        }
+        public List<Service> GetListService()
+        {
+            List<Service> list = new List<Service>();
+            string query = "SELECT * FROM dbo.Service ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Service service = new Service(item);
+                list.Add(service);
+            }
+            return list;
+        }
     }
 }

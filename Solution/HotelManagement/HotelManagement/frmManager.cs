@@ -21,6 +21,7 @@ namespace HotelManagement
             InitializeComponent();
             LoadRoom();
             LoadCategory();
+            LoadService();
         }
         void LoadCategory()
         {
@@ -34,10 +35,16 @@ namespace HotelManagement
             cbRoom.DataSource = listroom;
             cbRoom.DisplayMember = "roomname";
         }
+        void LoadService()
+        {
+            List<Service> listservice = ServiceDAO.Instance.GetListService();
+            cbService.DataSource = listservice;
+            cbService.DisplayMember = "servicename";
+        }
         #region Method
         void LoadRoom()
-        {   
-           
+        {
+
             List<Room> roomList = RoomDAO.Instance.LoadRoomList();
             foreach (Room item in roomList)
             {
@@ -46,9 +53,9 @@ namespace HotelManagement
                     Width = RoomDAO.RoomWidth,
                     Height = RoomDAO.RoomHeight
                 };
-                btn.Text = item.Roomname +Environment.NewLine + item.Status;
+                btn.Text = item.Roomname + Environment.NewLine + item.Status;
                 btn.Click += btn_Click;
-                btn.Tag= item;
+                btn.Tag = item;
                 switch (item.Status)
                 {
                     case "Trống":
@@ -60,7 +67,7 @@ namespace HotelManagement
                 }
                 flpRoom.Controls.Add(btn);
             }
-           
+
         }
 
         void ShowOrder(int id)
@@ -68,7 +75,7 @@ namespace HotelManagement
             listBill.Items.Clear();
             List<Menu> listOrderDetail = MenuDAO.Instance.GetListMenuByRoom(id);
             double totalPrice = 0;
-            foreach(Menu item in listOrderDetail)
+            foreach (Menu item in listOrderDetail)
             {
                 ListViewItem lsvItem = new ListViewItem(item.Servicename.ToString());
                 lsvItem.SubItems.Add(item.Serviceprice.ToString());
@@ -76,16 +83,16 @@ namespace HotelManagement
                 lsvItem.SubItems.Add(item.Roomprice.ToString());
                 totalPrice += item.Serviceprice + item.Roomprice;
                 listBill.Items.Add(lsvItem);
-                
+
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            txtTotal.Text = totalPrice.ToString("c",culture);
+            txtTotal.Text = totalPrice.ToString("c", culture);
         }
         #endregion
-         void btn_Click(object? sender, EventArgs e)
+        void btn_Click(object? sender, EventArgs e)
         {
-            int roomID =((sender as Button).Tag as Room).Roomid;
-            listBill.Tag=(sender as Button).Tag;
+            int roomID = ((sender as Button).Tag as Room).Roomid;
+            listBill.Tag = (sender as Button).Tag;
             ShowOrder(roomID);
 
         }
@@ -113,13 +120,46 @@ namespace HotelManagement
         {
             int id = 0;
             ComboBox cb = sender as ComboBox;
-            if(cb.SelectedItem == null)
+            if (cb.SelectedItem == null)
             {
                 return;
             }
             Category selected = cb.SelectedItem as Category;
             id = selected.CategoryID;
             LoadRoomByCategoryID(id);
+        }
+
+        private void btnAddServices_Click(object sender, EventArgs e)
+        {
+
+            Room room = listBill.Tag as Room;  
+            int idOrder = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
+            int serviceid = (cbService.SelectedItem as Service).ServiceID;
+            if (idOrder == -1)
+            {
+                OrderDAO.Instance.InsertOrder(room.Roomid);
+                OrderDetailDAO.Instance.InsertOrderDetail( OrderDAO.Instance.GetMaxIDOrder(),serviceid);
+            }
+            else
+            {
+                OrderDetailDAO.Instance.InsertOrderDetail(idOrder,serviceid);
+            }
+            ShowOrder(room.Roomid);
+        }
+
+        private void frmManager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flpRoom_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

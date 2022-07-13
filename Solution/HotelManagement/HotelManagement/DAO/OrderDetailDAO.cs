@@ -28,5 +28,17 @@ namespace HotelManagement.DAO
             }
             return listOrderDetail;
         }
+       
+        public void InsertOrderDetail(int orderid,int serviceid)
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertOrderDetail @orderid , @serviceid  ", 
+                new object[] { orderid, serviceid });
+        }
+        public int GetDetailIDByOrder(int orderid)
+        {
+            string query = String.Format("SELECT detailid FROM dbo.OrderDetail WHERE orderid = {0}", orderid);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result;
+        }
     }
 }

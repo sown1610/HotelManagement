@@ -27,5 +27,19 @@ namespace HotelManagement.DAO
             }
             return -1;
         }
+        public void InsertOrder(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertOrder @idRoom ", new object[] {id});
+        }
+        public int GetMaxIDOrder()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(@orderid) FROM dbo.Order");
+            } catch {
+                return 1;
+            }
+             
+        }
     }
 }

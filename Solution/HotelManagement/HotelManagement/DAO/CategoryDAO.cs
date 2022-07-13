@@ -39,5 +39,6 @@ namespace HotelManagement.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
         }
+
     }
 }

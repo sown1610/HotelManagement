@@ -16,7 +16,8 @@ namespace HotelManagement.DAO
             get { if (instance == null) instance = new RoomDAO(); return instance; }
             private set { instance = value; }
         }
-        private RoomDAO() { }
+        private RoomDAO() {
+        }
         public List<Room> LoadRoomList()
         {
             List<Room> roomList = new List<Room>();

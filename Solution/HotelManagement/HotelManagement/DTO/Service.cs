@@ -25,34 +25,27 @@ namespace HotelManagement.DTO
             set { _serviceName = value; }
         }
 
-        private float _servicePrice;
+        private double _servicePrice;
 
-        public float ServicePrice
+        public double ServicePrice
         {
             get { return _servicePrice; }
             set { _servicePrice = value; }
         }
 
-        private string _date;
-
-        public string Date
-        {
-            get { return _date; }
-            set { _date = value; }
-        }
-        public Service(int id, string name, float price,string date)
+        
+        public Service(int id, string name, double price)
         {
             ServiceID = id;
-            ServiceName = name;
-            Date = date;
+            ServiceName = name;           
             ServicePrice = price;
         }
         public Service(DataRow row)
         {
-            this.ServiceID = (int)row["id"];
-            this.ServiceName = row["name"].ToString();          
-            this.Date = row["date"].ToString();
-            this.ServicePrice = (float)Convert.ToDouble(row["price"].ToString());
+            this.ServiceID = (int)row["serviceid"];
+            this.ServiceName = row["servicename"].ToString();          
+            this.ServicePrice = Convert.ToDouble(row["serviceprice"].ToString());
+            
         }
     }
 }
