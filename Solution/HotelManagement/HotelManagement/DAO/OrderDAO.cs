@@ -19,13 +19,20 @@ namespace HotelManagement.DAO
         private OrderDAO() { }
         public int GetUncheckBillIDByRoomID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from [Order] where idRoom = " + id + " and status = 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery
+                ("select * from [Order] where idRoom = " + id + " and status = 0");
             if(data.Rows.Count > 0)
             {
                 Order order = new Order(data.Rows[0]);
                 return order.Orderid;
             }
             return -1;
+        }
+
+        public void CheckOut(int id)
+        {
+            string query = "UPDATE dbo.[Order] SET status = 1 WHERE orderid = " +id;
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
         public void InsertOrder(int id)
         {
