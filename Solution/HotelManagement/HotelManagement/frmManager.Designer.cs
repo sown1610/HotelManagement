@@ -53,11 +53,13 @@
             this.cbRoom = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).BeginInit();
             this.panel4.SuspendLayout();
+            this.flpRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -183,6 +185,7 @@
             this.txtTotal.TabIndex = 7;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // cbSwitchTable
             // 
@@ -200,6 +203,7 @@
             this.btnSwitchRoom.TabIndex = 6;
             this.btnSwitchRoom.Text = "Chuyển phòng";
             this.btnSwitchRoom.UseVisualStyleBackColor = true;
+            this.btnSwitchRoom.Click += new System.EventHandler(this.btnSwitchRoom_Click);
             // 
             // numDiscount
             // 
@@ -278,11 +282,21 @@
             // flpRoom
             // 
             this.flpRoom.AutoScroll = true;
+            this.flpRoom.Controls.Add(this.listView1);
             this.flpRoom.Location = new System.Drawing.Point(12, 27);
             this.flpRoom.Name = "flpRoom";
             this.flpRoom.Size = new System.Drawing.Size(453, 411);
             this.flpRoom.TabIndex = 4;
             this.flpRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flpRoom_Paint);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // frmManager
             // 
@@ -306,6 +320,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.flpRoom.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +352,6 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbService;
+        private System.Windows.Forms.ListView listView1;
     }
 }

@@ -22,6 +22,7 @@ namespace HotelManagement
             LoadRoom();
             LoadCategory();
             LoadService();
+            LoadComboboxRoom(cbSwitchTable);
         }
         void LoadCategory()
         {
@@ -85,7 +86,7 @@ namespace HotelManagement
                 listBill.Items.Add(lsvItem);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            txtTotal.Text = totalPrice.ToString("c", culture);
+            txtTotal.Text = totalPrice.ToString("c1", culture);
             
         }
         #endregion
@@ -168,22 +169,67 @@ namespace HotelManagement
             int roomid = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
             if (roomid != -1)
             {
-                if (MessageBox.Show("Bạn có chắc muốn thanh toán hóa đơn cho phòng" + 
-                    room.Roomname, "Thông báo", MessageBoxButtons.OKCancel
-                    ) == DialogResult.OK) ;
+                int discount = (int)numDiscount.Value;
+                string price = txtTotal.Text.Split(",")[0];
+                string[] price2 = price.Split(".");
+                string price3 = "";
+                for (int i = 0; i <= price2.Length - 1; i++)
                 {
-                    OrderDAO.Instance.CheckOut(roomid);
-                    ShowOrder(room.Roomid);
-                    LoadRoom();
+                    price3 += price2[i];
                 }
-                
-                
+                double totalPrice = Convert.ToDouble(price3);
+                double finalPrice = Convert.ToDouble(totalPrice - ((totalPrice / 100) * discount));
+                NumberFormatInfo numberFormatInfo = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
+                numberFormatInfo.NumberDecimalSeparator = ",";
+                numberFormatInfo.NumberGroupSeparator = ".";
+                string text = string.Format(numberFormatInfo, "{0:n}", finalPrice);
+                {
+                    if (listBill.Items.Count == 0)
+                    {
+                        MessageBox.Show("eo co cai  gi de thanh toan ca");
+                        return;
+                    }
+                    else
+                    {
+                        if (MessageBox.Show(String.Format("Bạn có muốn thanh toán cho bàn {0}\n Tổng tiền (Đã bao gồm giảm giá)= {0}đ" +
+                            room.Roomname, text), "Thông báo", MessageBoxButtons.OKCancel
+                            ) == DialogResult.OK);
+                        {
+                            OrderDAO.Instance.CheckOut(roomid, discount);
+                            ShowOrder(room.Roomid);
+                            LoadRoom();
+                        }
+                    }
+
+                }
             }
         }
 
         private void listBill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSwitchRoom_Click(object sender, EventArgs e)
+        {   
+           
+            int id1 = (listBill.Tag as Room).Roomid;
+            int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
+             if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển bàn {0} qua bàn {1} không ?", 
+                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
+                 "Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK);
+            RoomDAO.Instance.SwitchRoom(id1,id2);
+            LoadRoom();
+        }
+        void LoadComboboxRoom(ComboBox cb)
+        {
+            cb.DataSource = RoomDAO.Instance.LoadRoomList();
+            cb.DisplayMember = "roomname";
         }
     }
 }

@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 namespace HotelManagement.DAO
 {
     public class RoomDAO
-    {
+    {   
+        public void SwitchRoom(int id1,int id2)
+        {
+            DataProvider.Instance.ExecuteQuery("USP_SwitchRoom1 @@id1 , @@id2", new object[] { id1, id2 });
+        }
         private static RoomDAO instance;
         public static RoomDAO Instance
         {
