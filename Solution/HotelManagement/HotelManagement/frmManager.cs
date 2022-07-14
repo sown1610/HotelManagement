@@ -44,7 +44,7 @@ namespace HotelManagement
         #region Method
         void LoadRoom()
         {
-
+            flpRoom.Controls.Clear();
             List<Room> roomList = RoomDAO.Instance.LoadRoomList();
             foreach (Room item in roomList)
             {
@@ -86,6 +86,7 @@ namespace HotelManagement
             }
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = totalPrice.ToString("c", culture);
+            
         }
         #endregion
         void btn_Click(object? sender, EventArgs e)
@@ -114,7 +115,6 @@ namespace HotelManagement
             f.ShowDialog();
         }
         #endregion
-
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = 0;
@@ -144,6 +144,7 @@ namespace HotelManagement
                 OrderDetailDAO.Instance.InsertOrderDetail(idOrder, serviceid);
             }
             ShowOrder(room.Roomid);
+            LoadRoom();
         }
 
         private void frmManager_Load(object sender, EventArgs e)
@@ -173,6 +174,7 @@ namespace HotelManagement
                 {
                     OrderDAO.Instance.CheckOut(roomid);
                     ShowOrder(room.Roomid);
+                    LoadRoom();
                 }
                 
                 
