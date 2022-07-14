@@ -37,6 +37,11 @@ namespace HotelManagement.DAO
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertOrder @idRoom ", new object[] {id});
         }
+
+        public DataTable GetOrderListByDate(DateTime checkIn, DateTime checkOut)
+        {
+           return DataProvider.Instance.ExecuteQuery("exec USP_GetListOrderByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
         public int GetMaxIDOrder()
         {
             try

@@ -186,7 +186,7 @@ namespace HotelManagement
                 {
                     if (listBill.Items.Count == 0)
                     {
-                        MessageBox.Show("eo co cai  gi de thanh toan ca");
+                        MessageBox.Show("eo co cai gi de thanh toan ca");
                         return;
                     }
                     else

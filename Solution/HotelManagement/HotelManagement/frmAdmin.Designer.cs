@@ -85,13 +85,13 @@
             this.btnAddServices = new System.Windows.Forms.Button();
             this.tcAccount = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvOrder = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnViewOrder = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dtgAccount = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -139,7 +139,7 @@
             this.panel4.SuspendLayout();
             this.tcAccount.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvOrder)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAccount)).BeginInit();
@@ -697,7 +697,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dtgvOrder);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -706,36 +706,39 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // dataGridView1
+            // dtgvOrder
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(768, 341);
-            this.dataGridView1.TabIndex = 3;
+            this.dtgvOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvOrder.Location = new System.Drawing.Point(6, 63);
+            this.dtgvOrder.Name = "dtgvOrder";
+            this.dtgvOrder.RowTemplate.Height = 25;
+            this.dtgvOrder.Size = new System.Drawing.Size(768, 341);
+            this.dtgvOrder.TabIndex = 3;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnViewOrder);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(this.dateTimePicker2);
+            this.panel3.Controls.Add(this.dtpkToDate);
+            this.panel3.Controls.Add(this.dtpkFromDate);
             this.panel3.Location = new System.Drawing.Point(84, 6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(601, 29);
             this.panel3.TabIndex = 2;
             // 
-            // button1
+            // btnViewOrder
             // 
-            this.button1.Location = new System.Drawing.Point(511, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnViewOrder.Location = new System.Drawing.Point(511, 3);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnViewOrder.TabIndex = 5;
+            this.btnViewOrder.Text = "Thống kê";
+            this.btnViewOrder.UseVisualStyleBackColor = true;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
             // 
             // label3
             // 
@@ -757,19 +760,19 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "From";
             // 
-            // dateTimePicker1
+            // dtpkToDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(284, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpkToDate.Location = new System.Drawing.Point(284, 3);
+            this.dtpkToDate.Name = "dtpkToDate";
+            this.dtpkToDate.Size = new System.Drawing.Size(200, 23);
+            this.dtpkToDate.TabIndex = 2;
             // 
-            // dateTimePicker2
+            // dtpkFromDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(50, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpkFromDate.Location = new System.Drawing.Point(50, 4);
+            this.dtpkFromDate.Name = "dtpkFromDate";
+            this.dtpkFromDate.Size = new System.Drawing.Size(200, 23);
+            this.dtpkFromDate.TabIndex = 1;
             // 
             // tabPage5
             // 
@@ -1018,7 +1021,7 @@
             this.panel4.ResumeLayout(false);
             this.tcAccount.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvOrder)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -1044,13 +1047,13 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tcAccount;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvOrder;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnViewOrder;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpkToDate;
+        private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
