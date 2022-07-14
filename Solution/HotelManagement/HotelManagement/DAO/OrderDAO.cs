@@ -42,7 +42,7 @@ namespace HotelManagement.DAO
         {
             try
             {
-                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(@orderid) FROM dbo.Order");
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(orderid) FROM [Order]");
             } catch {
                 return 1;
             }
