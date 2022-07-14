@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {}
+    "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {
+    "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+        "projectUniqueName": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
         "projectName": "HotelManagement",
-        "projectPath": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
-        "packagesPath": "C:\\Users\\phanl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\obj\\",
+        "projectPath": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+        "packagesPath": "C:\\Users\\Sown\\.nuget\\packages\\",
+        "outputPath": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sown\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

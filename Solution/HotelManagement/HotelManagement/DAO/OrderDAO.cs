@@ -28,9 +28,9 @@ namespace HotelManagement.DAO
             }
             return -1;
         }
-        public void CheckOut(int id,int discount)
+        public void CheckOut(int id,int discount, float totalPrice)
         {
-            string query = "UPDATE dbo.[Order] SET status = 1," +  "discount ="+discount+"WHERE orderid = " +id;
+            string query = "UPDATE dbo.[Order] SET datecheckout = GETDATE(), status = 1," +  "discount ="+discount+", totalPrice = " + totalPrice+" WHERE orderid = " +id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
         public void InsertOrder(int id)

@@ -195,7 +195,7 @@ namespace HotelManagement
                             room.Roomname, text), "Thông báo", MessageBoxButtons.OKCancel
                             ) == DialogResult.OK);
                         {
-                            OrderDAO.Instance.CheckOut(roomid, discount);
+                            OrderDAO.Instance.CheckOut(roomid, discount, (float)finalPrice);
                             ShowOrder(room.Roomid);
                             LoadRoom();
                         }
