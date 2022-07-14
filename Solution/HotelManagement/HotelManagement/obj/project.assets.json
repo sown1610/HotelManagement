@@ -484,19 +484,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\": {}
+    "C:\\Users\\phanl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPTU\\Learning\\Ki5\\PRN211\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "projectUniqueName": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
       "projectName": "HotelManagement",
-      "projectPath": "D:\\FPTU\\Learning\\Ki5\\PRN211\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
-      "packagesPath": "C:\\Users\\Sown_Laptop\\.nuget\\packages\\",
-      "outputPath": "D:\\FPTU\\Learning\\Ki5\\PRN211\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\obj\\",
+      "projectPath": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "packagesPath": "C:\\Users\\phanl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\phanl\\source\\repos\\HotelManagement\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sown_Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\phanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -545,7 +545,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
