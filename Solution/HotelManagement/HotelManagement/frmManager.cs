@@ -83,7 +83,6 @@ namespace HotelManagement
                 lsvItem.SubItems.Add(item.Roomprice.ToString());
                 totalPrice += item.Serviceprice + item.Roomprice;
                 listBill.Items.Add(lsvItem);
-
             }
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = totalPrice.ToString("c", culture);
@@ -132,17 +131,17 @@ namespace HotelManagement
         private void btnAddServices_Click(object sender, EventArgs e)
         {
 
-            Room room = listBill.Tag as Room;  
+            Room room = listBill.Tag as Room;
             int idOrder = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
             int serviceid = (cbService.SelectedItem as Service).ServiceID;
             if (idOrder == -1)
             {
                 OrderDAO.Instance.InsertOrder(room.Roomid);
-                OrderDetailDAO.Instance.InsertOrderDetail( OrderDAO.Instance.GetMaxIDOrder(),serviceid);
+                OrderDetailDAO.Instance.InsertOrderDetail(OrderDAO.Instance.GetMaxIDOrder(), serviceid);
             }
             else
             {
-                OrderDetailDAO.Instance.InsertOrderDetail(idOrder,serviceid);
+                OrderDetailDAO.Instance.InsertOrderDetail(idOrder, serviceid);
             }
             ShowOrder(room.Roomid);
         }
@@ -158,6 +157,29 @@ namespace HotelManagement
         }
 
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Room room = listBill.Tag as Room;
+            int roomid = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
+            if (roomid != -1)
+            {
+                if (MessageBox.Show("Bạn có chắc muốn thanh toán hóa đơn cho phòng" + 
+                    room.Roomname, "Thông báo", MessageBoxButtons.OKCancel
+                    ) == DialogResult.OK) ;
+                {
+                    OrderDAO.Instance.CheckOut(roomid);
+                    ShowOrder(room.Roomid);
+                }
+                
+                
+            }
+        }
+
+        private void listBill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
