@@ -17,6 +17,7 @@ namespace HotelManagement
     {
         BindingSource roomlist = new BindingSource();
         BindingSource serviceList = new BindingSource();
+        BindingSource accountList = new BindingSource();
         public frmAdmin()
         {
             InitializeComponent();
@@ -28,13 +29,26 @@ namespace HotelManagement
         void Load()
         {
             dtgServices.DataSource = roomlist;
+            dtgAccount.DataSource = accountList;
+
             LoadDateTimePickerOrder();
             LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListService();
             AddServiceBinding();
             LoadListRoom();
+            LoadAccount();
             addRoomBinding();
+            AddAccountBingding();
             LoadCategoryIntoCombobox(cbRoomCategory);
+        }
+        void AddAccountBingding()
+        {
+            txtUsername.DataBindings.Add(new Binding("Text", dtgAccount.DataSource, "UserName"));
+            txtDisplayName.DataBindings.Add(new Binding("Text",dtgAccount.DataBindings,"DisplayName"));
+        }
+        void LoadAccount()
+        {
+            accountList.DataSource =AccountDAO.Instance.GetListAccount() ;
         }
         void LoadDateTimePickerOrder()
         {
@@ -165,6 +179,11 @@ namespace HotelManagement
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnViewAccount_Click(object sender, EventArgs e)
+        {
+            LoadAccount();
         }
     }
 }
