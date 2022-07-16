@@ -345,6 +345,7 @@
             this.btnUpdateRoom.TabIndex = 6;
             this.btnUpdateRoom.Text = "Sửa";
             this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
             // 
             // btnDeleteRoom
             // 

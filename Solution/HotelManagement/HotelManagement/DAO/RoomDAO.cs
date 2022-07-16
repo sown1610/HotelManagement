@@ -81,6 +81,12 @@ namespace HotelManagement.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public Boolean UpdateRoom(int roomid,string roomname, int categoryid, float price)
+        {
+            string query = string.Format("UPDATE dbo.Room SET roomname = N'{0}', categoryid = {1}, roomprice = {2} WHERE roomid = {3}", roomname, categoryid, price, roomid);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;
     }

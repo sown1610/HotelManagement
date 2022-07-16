@@ -166,5 +166,22 @@ namespace HotelManagement
         {
 
         }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            string name = txtroomname.Text;
+            int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
+            float price = (float)numRoomPrice.Value;
+            int roomid = Convert.ToInt32(txtroomid.Text);
+            if (RoomDAO.Instance.UpdateRoom(roomid,name, cateid, price))
+            {
+                MessageBox.Show("Sửa  thành công");
+                LoadListRoom();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm rồi đần ");
+            }
+        }
     }
 }
