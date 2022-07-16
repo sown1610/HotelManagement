@@ -31,6 +31,12 @@ namespace HotelManagement.DAO
 
             return result > 0;
         }
+
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("select userName,displayName,type from Account");
+        }
+
         /// <summary>
         /// Get Account By User Name
         /// </summary>
