@@ -31,6 +31,7 @@ namespace HotelManagement
             LoadCategory();
             LoadService();
             LoadComboboxRoom(cbSwitchTable);
+            
         }
 
         void ChangeAccount(int type)
@@ -251,5 +252,7 @@ namespace HotelManagement
             cb.DataSource = RoomDAO.Instance.LoadRoomList();
             cb.DisplayMember = "roomname";
         }
+       
+        
     }
 }

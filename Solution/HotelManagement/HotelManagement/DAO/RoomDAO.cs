@@ -58,7 +58,29 @@ namespace HotelManagement.DAO
             
             return room;
         }
+        public List<Room> GetListRoom()
+        {
+            List<Room> list = new List<Room>();
 
+            string query = "select * from Room";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Room room = new Room(item);
+                list.Add(room);
+            }
+
+            return list;
+        }
+
+        public Boolean InsertRoom(string roomname, int categoryid, float price)
+        {
+            string query = string.Format("INSERT dbo.Room(roomname,categoryid,roomprice)VALUES(N'{0}' , {1} , {2} )", roomname,categoryid,price);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;
     }

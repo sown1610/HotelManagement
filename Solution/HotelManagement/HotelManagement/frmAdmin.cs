@@ -15,21 +15,26 @@ namespace HotelManagement
 {
     public partial class frmAdmin : Form
     {
+        BindingSource roomlist = new BindingSource();
         BindingSource serviceList = new BindingSource();
         public frmAdmin()
         {
             InitializeComponent();
+            loadCategoryToComboBox(cboCate);
             Load();
         }
 
         #region methods
         void Load()
         {
-            dtgServices.DataSource = serviceList;
+            dtgServices.DataSource = roomlist;
             LoadDateTimePickerOrder();
             LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListService();
             AddServiceBinding();
+            LoadListRoom();
+            addRoomBinding();
+            LoadCategoryIntoCombobox(cbRoomCategory);
         }
         void LoadDateTimePickerOrder()
         {
@@ -45,6 +50,7 @@ namespace HotelManagement
             dtgvOrder.DataSource = OrderDAO.Instance.GetOrderListByDate(checkIn, checkOut);
 
         }
+       
         void AddServiceBinding()
         {
             txtServicesName.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "ServiceName"));
@@ -74,6 +80,12 @@ namespace HotelManagement
 
         #endregion
 
+        void loadCategoryToComboBox(ComboBox cb)
+        {
+            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DisplayMember = "categoryname";
+            cb.Refresh();
+        }
         private void txtServiceID_TextChange(object sender, EventArgs e)
         {
             if (dtgServices.SelectedCells.Count > 0)
@@ -111,6 +123,48 @@ namespace HotelManagement
                 MessageBox.Show("Có lỗi khi thêm");
 
             }
+        }
+
+        private void cboCate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadCategoryToComboBox(cboCate);
+        }
+        void LoadListRoom()
+        {
+            dtgRoom.DataSource = RoomDAO.Instance.GetListRoom();
+            
+        }
+        void addRoomBinding()
+        {
+            txtroomname.DataBindings.Add(new Binding("Text", dtgRoom.DataSource, "roomname", true, DataSourceUpdateMode.Never));
+            txtroomid.DataBindings.Add(new Binding("Text", dtgRoom.DataSource, "roomid", true, DataSourceUpdateMode.Never));
+            numRoomPrice.DataBindings.Add(new Binding("Value", dtgRoom.DataSource, "roomprice", true, DataSourceUpdateMode.Never));
+            
+        }
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+            string name = txtroomname.Text;
+            int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
+            float price = (float)numRoomPrice.Value;
+
+            if (RoomDAO.Instance.InsertRoom(name, cateid,price))
+            {
+                MessageBox.Show("Thêm thành công");
+                LoadListRoom();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm ");
+            }
+        }
+        void LoadCategoryIntoCombobox(ComboBox cb)
+        {
+            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DisplayMember = "categoryname";
+        }
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
