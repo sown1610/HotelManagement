@@ -28,6 +28,7 @@ namespace HotelManagement.DAO
             }
             return listOrderDetail;
         }   
+        
         public void InsertOrderDetail(int orderid,int serviceid)
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertOrderDetail @orderid , @serviceid ", 
