@@ -20,14 +20,14 @@ namespace HotelManagement
         public frmAdmin()
         {
             InitializeComponent();
-            loadCategoryToComboBox(cboCate);
+            
             Load();
         }
 
         #region methods
         void Load()
         {
-            dtgServices.DataSource = roomlist;
+            dtgServices.DataSource = serviceList;
             LoadDateTimePickerOrder();
             LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListService();
@@ -53,9 +53,9 @@ namespace HotelManagement
        
         void AddServiceBinding()
         {
-            txtServicesName.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "ServiceName"));
-            txtServicesID.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "ServiceID"));
-            numServicePrice.DataBindings.Add(new Binding("Value", dtgServices.DataSource, "ServicePrice"));
+            txtServicesName.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "servicename", true, DataSourceUpdateMode.Never));
+            txtServicesID.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "serviceid", true, DataSourceUpdateMode.Never));
+            numServicePrice.DataBindings.Add(new Binding("Value", dtgServices.DataSource, "serviceprice", true, DataSourceUpdateMode.Never));
         }
         void LoadListService()
         {
@@ -110,7 +110,7 @@ namespace HotelManagement
         private void btnAddServices_Click(object sender, EventArgs e)
         {
             string name = txtServicesName.Text;
-            //int serviceID = (cboCatge./*SelectedItem*/ as Category).CategoryID;
+           
             float price = (float)numServicePrice.Value;
 
             if(ServiceDAO.Instance.InsertService(name,price))
@@ -127,7 +127,7 @@ namespace HotelManagement
 
         private void cboCate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadCategoryToComboBox(cboCate);
+            
         }
         void LoadListRoom()
         {
