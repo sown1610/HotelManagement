@@ -48,12 +48,41 @@ namespace HotelManagement.DAO
             return list;
         }
 
+        public List<Service> SerachServiceByName(string name)
+        {
+
+            List<Service> list = new List<Service>();
+            string query =string.Format ("SELECT * FROM Service WHERE [dbo].[fuConvertToUnsign1](servicename) LIKE N'%'+[dbo].[fuConvertToUnsign1](N'{0}') +N'%'",name );
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Service service = new Service(item);
+                list.Add(service);
+            }
+            return list;
+        }
         public bool InsertService(string name,float price)
         {
-            string query =string.Format("INSERT INTO dbo.Service(name,price)VALUES (N'{0}',{2})", name,price) ;
+            string query =string.Format("INSERT INTO dbo.Service(servicename,serviceprice)VALUES (N'{0}',{1})", name,price) ;
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
+        public bool UpdateService(int idService,string name, float price)
+        {
+            string query = string.Format("update Service set  servicename = N'{0}',serviceprice = {1} where serviceid ={2}", name, price,idService);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool DeleteService(int idService)
+        {
+            OrderDetailDAO.Instance.DeleteOderDetailByServiceId(idService);
+            string query = string.Format("Delete Service where serviceid = {0} ",idService);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
     }
 }

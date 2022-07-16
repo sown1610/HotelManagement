@@ -134,7 +134,25 @@ namespace HotelManagement
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAdmin f = new frmAdmin();
+            f.loginAccount = loginAccount;
+            f.InsertService += f_InsertService;
+            f.DeletetService += f_DeletetService;
+            f.UpdateService += f_UpdateService;
             f.ShowDialog();
+        }
+
+         void f_UpdateService(object? sender, EventArgs e)
+        {
+            
+        }
+
+        private void f_DeletetService(object? sender, EventArgs e)
+        {
+        }
+
+        void f_InsertService(object sender, EventArgs e)
+        {
+
         }
         #endregion
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

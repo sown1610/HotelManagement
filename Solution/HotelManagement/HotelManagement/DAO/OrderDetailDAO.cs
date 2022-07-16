@@ -40,5 +40,9 @@ namespace HotelManagement.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result;
         }
+        public void DeleteOderDetailByServiceId(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("delete from OrderDetail where serviceid =" + id);
+        }
     }
 }

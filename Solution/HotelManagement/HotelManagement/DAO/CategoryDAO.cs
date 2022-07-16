@@ -40,5 +40,7 @@ namespace HotelManagement.DAO
             return result;
         }
 
+
+
     }
 }
