@@ -197,11 +197,6 @@ namespace HotelManagement
 
         }
 
-        private void cbService_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             Room room = listBill.Tag as Room;

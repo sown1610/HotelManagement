@@ -40,6 +40,29 @@ namespace HotelManagement.DAO
             return result;
         }
 
+        public bool InsertCategory(string categoryName)
+        {
+            string query = string.Format("INSERT dbo.RoomCategory (categoryname) VALUES (N'{0}')",categoryName);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        public bool UpdateCategory(string categoryName,int categoryId)
+        {
+            string query = string.Format("UPDATE dbo.RoomCategory SET categoryname = N'{0}' WHERE categoryid={1}", categoryName,categoryId);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        //public bool DeleteCategory(string username)
+        //{
+
+        //    string query = string.Format("" username);
+        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+        //    return result > 0;
+        //}
+
 
 
     }
