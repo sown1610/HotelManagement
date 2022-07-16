@@ -45,6 +45,19 @@ namespace HotelManagement.DAO
             }
             return list;
         }
+        public Room GetRoomById(int id)
+        {
+            Room room = null;
+            string query = "select * from Room where categoryid = " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                room = new Room(item);
+                return room;
+            }
+            
+            return room;
+        }
 
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;

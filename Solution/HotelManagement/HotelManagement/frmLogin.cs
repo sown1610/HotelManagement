@@ -1,4 +1,5 @@
 ﻿using HotelManagement.DAO;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,8 @@ namespace HotelManagement
             string pass = txtPass.Text;
             if (Login(user, pass))
             {
-                frmManager f = new frmManager();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(user);
+                frmManager f = new frmManager(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
@@ -57,6 +59,11 @@ namespace HotelManagement
             {
                 e.Cancel = true;
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

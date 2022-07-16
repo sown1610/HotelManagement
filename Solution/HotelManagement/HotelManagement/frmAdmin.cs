@@ -1,4 +1,5 @@
 ﻿using HotelManagement.DAO;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,22 @@ namespace HotelManagement
 {
     public partial class frmAdmin : Form
     {
+        BindingSource serviceList = new BindingSource();
         public frmAdmin()
         {
             InitializeComponent();
-            LoadDateTimePickerOrder();
-            LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
-
+            Load();
         }
 
         #region methods
+        void Load()
+        {
+            dtgServices.DataSource = serviceList;
+            LoadDateTimePickerOrder();
+            LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
+            LoadListService();
+            AddServiceBinding();
+        }
         void LoadDateTimePickerOrder()
         {
             DateTime today = DateTime.Now;
@@ -32,47 +40,28 @@ namespace HotelManagement
             dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
 
         }
-            void LoadListOrderByDate(DateTime checkIn, DateTime checkOut)
+        void LoadListOrderByDate(DateTime checkIn, DateTime checkOut)
         {
             dtgvOrder.DataSource = OrderDAO.Instance.GetOrderListByDate(checkIn, checkOut);
 
+        }
+        void AddServiceBinding()
+        {
+            txtServicesName.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "ServiceName"));
+            txtServicesID.DataBindings.Add(new Binding("Text", dtgServices.DataSource, "ServiceID"));
+            numServicePrice.DataBindings.Add(new Binding("Value", dtgServices.DataSource, "ServicePrice"));
+        }
+        void LoadListService()
+        {
+            serviceList.DataSource = ServiceDAO.Instance.GetListService();
         }
 
 
         #endregion
         #region events
-        
-
-
-
-        private void label1_Click(object sender, EventArgs e)
+        private void btnViewServices_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtServicesName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtgServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void frmAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
+            LoadListService();
         }
 
         private void btnViewOrder_Click(object sender, EventArgs e)
@@ -80,8 +69,48 @@ namespace HotelManagement
             LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
         }
 
+
+
+
         #endregion
 
-        
+        private void txtServiceID_TextChange(object sender, EventArgs e)
+        {
+            if (dtgServices.SelectedCells.Count > 0)
+            {
+                //int id = (int)dtgServices.SelectedCells[0].OwningRow.Cells["RoomId"].Value;
+                //if (Int32.TryParse(txtCategoryID.Text, out id))
+                //{
+                //    Room room = RoomDAO.Instance.GetRoomById(id);
+                //    cbRoomCategory.SelectedItem = room;
+
+                //    int index = -1;
+                //    int i = 0;
+                //    foreach (Room item in cbRoomCategory.Items)
+                //    {
+                //        if(item.ID == room.Roomid)
+                //    }
+                //}
+            }
+
+        }
+
+        private void btnAddServices_Click(object sender, EventArgs e)
+        {
+            string name = txtServicesName.Text;
+            //int serviceID = (cboCatge./*SelectedItem*/ as Category).CategoryID;
+            float price = (float)numServicePrice.Value;
+
+            if(ServiceDAO.Instance.InsertService(name,price))
+            {
+                MessageBox.Show("Thêm Service thành công");
+                LoadListService();  
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm");
+
+            }
+        }
     }
 }

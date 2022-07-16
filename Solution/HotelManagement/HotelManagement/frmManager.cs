@@ -16,13 +16,27 @@ namespace HotelManagement
 {
     public partial class frmManager : Form
     {
-        public frmManager()
+        private Account loginAccount;
+        public Account LoginAccount
+        {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+
+        public frmManager(Account acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
             LoadRoom();
             LoadCategory();
             LoadService();
             LoadComboboxRoom(cbSwitchTable);
+        }
+
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+            thôngTinTàiKhoảnToolStripMenuItem.Text += "(" + LoginAccount.DisplayName + ")";
         }
         void LoadCategory()
         {
@@ -87,7 +101,7 @@ namespace HotelManagement
             }
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = totalPrice.ToString("c1", culture);
-            
+
         }
         #endregion
         void btn_Click(object? sender, EventArgs e)
@@ -106,8 +120,14 @@ namespace HotelManagement
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAccountProfile f = new frmAccountProfile();
+            frmAccountProfile f = new frmAccountProfile(LoginAccount);
+            f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
+        }
+
+        void f_UpdateAccount(object sender,AccountEvent e)
+        {
+            thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản (" + e.Acc.DisplayName + ")";
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,7 +213,7 @@ namespace HotelManagement
                     {
                         if (MessageBox.Show(String.Format("Bạn có muốn thanh toán cho bàn {0}\n Tổng tiền (Đã bao gồm giảm giá)= {0}đ" +
                             room.Roomname, text), "Thông báo", MessageBoxButtons.OKCancel
-                            ) == DialogResult.OK);
+                            ) == DialogResult.OK) ;
                         {
                             OrderDAO.Instance.CheckOut(roomid, discount, (float)finalPrice);
                             ShowOrder(room.Roomid);
@@ -216,14 +236,14 @@ namespace HotelManagement
         }
 
         private void btnSwitchRoom_Click(object sender, EventArgs e)
-        {   
-           
+        {
+
             int id1 = (listBill.Tag as Room).Roomid;
             int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
-             if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển bàn {0} qua bàn {1} không ?", 
-                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
-                 "Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK);
-            RoomDAO.Instance.SwitchRoom(id1,id2);
+            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển bàn {0} qua bàn {1} không ?",
+                (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+            RoomDAO.Instance.SwitchRoom(id1, id2);
             LoadRoom();
         }
         void LoadComboboxRoom(ComboBox cb)

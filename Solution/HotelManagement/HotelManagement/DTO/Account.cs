@@ -9,30 +9,30 @@ namespace HotelManagement.DTO
 {
     public class Account
     {
-
-
-        private int type;
-        private string password;
         private string displayName;
         private string userName;
-        public string UserName { get; set; }
+        private string password;
+        private int type;
+
+        public string UserName{get => userName; set => userName = value;}
         public string DisplayName { get => displayName; set => displayName = value; }
         public int Type { get => type; set => type = value; }
         public string Password { get => password; set => password = value; }
-        public Account(int type, string password = null, string displayName, string userName)
+        public Account(string displayName, string userName, string password, int type)
         {
-            this.Type = type;
-            this.Password = password;
-            this.DisplayName = displayName;
-            this.UserName = userName;
+            DisplayName = displayName;
+            UserName = userName;
+            Password = password;
+            Type = type;
             
         }
+
         public Account(DataRow row)
         {
-            this.Type = type;
-            this.Password = password;
-            this.DisplayName = displayName;
-            this.UserName = userName;
+            this.UserName = row["userName"].ToString();
+            this.DisplayName = row["displayName"].ToString();
+            this.Type = (int)row["type"];
+            this.Password = row["password"].ToString();
         }
     }
 }

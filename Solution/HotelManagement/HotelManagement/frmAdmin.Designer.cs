@@ -64,6 +64,9 @@
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.cboCatge = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.numServicePrice = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -129,6 +132,7 @@
             this.panel16.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numServicePrice)).BeginInit();
             this.panel9.SuspendLayout();
@@ -490,10 +494,10 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dịch vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.panel25);
             this.panel7.Controls.Add(this.panel11);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
@@ -501,6 +505,33 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(325, 338);
             this.panel7.TabIndex = 2;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.cboCatge);
+            this.panel25.Controls.Add(this.label15);
+            this.panel25.Location = new System.Drawing.Point(3, 181);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(316, 41);
+            this.panel25.TabIndex = 10;
+            // 
+            // cboCatge
+            // 
+            this.cboCatge.FormattingEnabled = true;
+            this.cboCatge.Location = new System.Drawing.Point(95, 9);
+            this.cboCatge.Name = "cboCatge";
+            this.cboCatge.Size = new System.Drawing.Size(218, 23);
+            this.cboCatge.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(5, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 21);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Danh Mục:";
             // 
             // panel11
             // 
@@ -527,7 +558,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(3, 14);
+            this.label8.Location = new System.Drawing.Point(5, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 21);
             this.label8.TabIndex = 0;
@@ -575,6 +606,7 @@
             this.txtServicesID.ReadOnly = true;
             this.txtServicesID.Size = new System.Drawing.Size(221, 23);
             this.txtServicesID.TabIndex = 1;
+            this.txtServicesID.TextChanged += new System.EventHandler(this.txtServiceID_TextChange);
             // 
             // label5
             // 
@@ -601,7 +633,6 @@
             this.txtServicesSearchName.Name = "txtServicesSearchName";
             this.txtServicesSearchName.Size = new System.Drawing.Size(301, 23);
             this.txtServicesSearchName.TabIndex = 9;
-            this.txtServicesSearchName.TextChanged += new System.EventHandler(this.txtServicesName_TextChanged);
             // 
             // btnSearchServices
             // 
@@ -629,7 +660,6 @@
             this.dtgServices.RowTemplate.Height = 25;
             this.dtgServices.Size = new System.Drawing.Size(432, 332);
             this.dtgServices.TabIndex = 3;
-            this.dtgServices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgServices_CellContentClick);
             // 
             // panel4
             // 
@@ -651,6 +681,7 @@
             this.btnViewServices.TabIndex = 7;
             this.btnViewServices.Text = "Xem";
             this.btnViewServices.UseVisualStyleBackColor = true;
+            this.btnViewServices.Click += new System.EventHandler(this.btnViewServices_Click);
             // 
             // btnUpdateServices
             // 
@@ -681,6 +712,7 @@
             this.btnAddServices.TabIndex = 4;
             this.btnAddServices.Text = "Thêm";
             this.btnAddServices.UseVisualStyleBackColor = true;
+            this.btnAddServices.Click += new System.EventHandler(this.btnAddServices_Click);
             // 
             // tcAccount
             // 
@@ -706,7 +738,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dtgvOrder
             // 
@@ -984,7 +1015,6 @@
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.tabPage4.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
@@ -1007,6 +1037,8 @@
             this.panel16.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numServicePrice)).EndInit();
@@ -1127,5 +1159,8 @@
         private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cboCatge;
     }
 }

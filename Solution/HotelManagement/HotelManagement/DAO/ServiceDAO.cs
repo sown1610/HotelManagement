@@ -47,5 +47,13 @@ namespace HotelManagement.DAO
             }
             return list;
         }
+
+        public bool InsertService(string name,float price)
+        {
+            string query =string.Format("INSERT INTO dbo.Service(name,price)VALUES (N'{0}',{2})", name,price) ;
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }
