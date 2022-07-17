@@ -58,6 +58,11 @@ namespace HotelManagement
         }
         void AddAccount(string userName, string disPlayname, int type)
         {
+            if (AccountDAO.Instance.checkAccountExist(txtUsername.Text) == 1)
+            {
+                MessageBox.Show("Không thể thêm tài khoản đã tồn tại");
+                return;
+            }
             if (AccountDAO.Instance.InsertAccount(userName, disPlayname, type))
             {
                 MessageBox.Show("Thêm tài khoản thành công");
@@ -231,13 +236,20 @@ namespace HotelManagement
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             string name = txtCategoryName.Text;
-            if(CategoryDAO.instance.InsertCategory(name))
+            if (CategoryDAO.Instance.checkCategoryExist(name) == 1)
             {
-                MessageBox.Show("Add success");
+                MessageBox.Show("Không thể thêm danh mục đã tồn tại");
+                return;
+            }
+            if (CategoryDAO.instance.InsertCategory(name))
+            {
+                MessageBox.Show("Thêm thành công !!!");
                 loadListCategory();
-            }else
+
+            }
+            else
             {
-                MessageBox.Show("Add fail");
+                MessageBox.Show("Thêm lỗi !!!");
             }
         }
 
@@ -245,10 +257,11 @@ namespace HotelManagement
         {
             string name = txtCategoryName.Text;
             int categoryId = int.Parse(txtCategoryID.Text);
-            if (CategoryDAO.instance.UpdateCategory(name,categoryId))
+            if (CategoryDAO.instance.UpdateCategory(name, categoryId))
             {
                 MessageBox.Show("Update success");
                 loadListCategory();
+
             }
             else
             {
@@ -306,9 +319,13 @@ namespace HotelManagement
         private void btnAddServices_Click(object sender, EventArgs e)
         {
             string name = txtServicesName.Text;
-
             float price = (float)numServicePrice.Value;
 
+           if(ServiceDAO.Instance.checkServiceExsit(name)==1)
+            {
+                MessageBox.Show("Không thể thêm dịch vụ đã tồn tại");
+                return;
+            }
             if (ServiceDAO.Instance.InsertService(name, price))
             {
                 MessageBox.Show("Thêm Service thành công");
@@ -450,6 +467,6 @@ namespace HotelManagement
 
         }
 
-        
+
     }
 }

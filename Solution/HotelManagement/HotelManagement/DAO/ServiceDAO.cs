@@ -83,6 +83,13 @@ namespace HotelManagement.DAO
 
             return result > 0;
         }
+        public int checkServiceExsit(string servicename)
+        {
+            string query = string.Format("SELECT COUNT(*) FROM dbo.Service WHERE servicename = N'{0}'", servicename);
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+
 
     }
 }
