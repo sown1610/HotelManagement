@@ -251,6 +251,8 @@ namespace HotelManagement
             {
                 MessageBox.Show("Thêm lỗi !!!");
             }
+            loadCategoryToComboBox(cbRoomCategory);
+
         }
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
@@ -267,6 +269,25 @@ namespace HotelManagement
             {
                 MessageBox.Show("Update fail");
             }
+            loadCategoryToComboBox(cbRoomCategory);
+
+        }
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            int categoryId = int.Parse(txtCategoryID.Text);
+            if (CategoryDAO.instance.DeleteCategory(categoryId))
+            {
+                MessageBox.Show("Delete success");
+                loadListCategory();
+
+            }
+            else
+            {
+                MessageBox.Show("Delete fail");
+            }
+            LoadListRoom();
+            loadCategoryToComboBox(cbRoomCategory);
+
         }
 
         #endregion
@@ -303,6 +324,20 @@ namespace HotelManagement
             else
             {
                 MessageBox.Show("Có lỗi khi thêm rồi đần ");
+            }
+        }
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+            
+            int roomid = Convert.ToInt32(txtroomid.Text);
+            if (RoomDAO.Instance.DeleteRoom(roomid))
+            {
+                MessageBox.Show("Delete  thành công");
+                LoadListRoom();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi Delete rồi đần ");
             }
         }
         #endregion
@@ -421,9 +456,49 @@ namespace HotelManagement
         #endregion
 
         #region Category
+        private event EventHandler insertCategory;
+        public event EventHandler InsertCategory
+        {
+            add { insertCategory += value; }
+            remove { insertCategory -= value; }
+        }
+
+        private event EventHandler deleteCategory;
+        public event EventHandler DeleteCategory
+        {
+            add { deleteCategory += value; }
+            remove { deleteCategory -= value; }
+        }
+
+        private event EventHandler updateCategory;
+        public event EventHandler UpdateCategory
+        {
+            add { updateCategory += value; }
+            remove { updateCategory -= value; }
+        }
         #endregion
 
         #region Room
+        private event EventHandler insertRoom;
+        public event EventHandler InsertRoom
+        {
+            add { insertRoom += value; }
+            remove { insertRoom -= value; }
+        }
+
+        private event EventHandler deleteRoom;
+        public event EventHandler DeleteRoom
+        {
+            add { deleteRoom += value; }
+            remove { deleteRoom -= value; }
+        }
+
+        private event EventHandler updateRoom;
+        public event EventHandler UpdateRoom
+        {
+            add { updateRoom += value; }
+            remove { updateRoom -= value; }
+        }
         #endregion
 
         #region Service
@@ -467,6 +542,6 @@ namespace HotelManagement
 
         }
 
-
+       
     }
 }

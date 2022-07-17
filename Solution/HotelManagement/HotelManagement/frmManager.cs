@@ -138,10 +138,98 @@ namespace HotelManagement
             f.InsertService += f_InsertService;
             f.DeletetService += f_DeletetService;
             f.UpdateService += f_UpdateService;
+
+
+            f.InsertCategory += f_InsertCategory;
+            f.DeleteCategory += f_DeleteCategory;
+            f.UpdateCategory += f_UpdateCategory;
+
+            f.InsertRoom += f_InsertRoom;
+            f.DeleteRoom += f_DeleteRoom;
+            f.UpdateRoom += f_UpdateRoom;
+
             f.ShowDialog();
         }
 
-         void f_UpdateService(object? sender, EventArgs e)
+        private void f_UpdateRoom(object? sender, EventArgs e)
+        {
+            LoadRoom();
+
+            LoadRoomByCategoryID((cbCategory.SelectedItem as Category).CategoryID);
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if (listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        private void f_DeleteRoom(object? sender, EventArgs e)
+        {
+            LoadRoom();
+            LoadRoomByCategoryID((cbCategory.SelectedItem as Category).CategoryID);
+
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if (listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        private void f_InsertRoom(object? sender, EventArgs e)
+        {
+            LoadRoom();
+            LoadRoomByCategoryID((cbCategory.SelectedItem as Category).CategoryID);
+
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if (listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        private void f_UpdateCategory(object? sender, EventArgs e)
+        {
+            LoadRoom();
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if(listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        private void f_DeleteCategory(object? sender, EventArgs e)
+        {
+            LoadRoom();
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if (listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        private void f_InsertCategory(object? sender, EventArgs e)
+        {
+            LoadRoom();
+            LoadCategory();
+            LoadService();
+            LoadComboboxRoom(cbSwitchTable);
+            if (listBill.Tag != null)
+            {
+                ShowOrder((listBill.Tag as Room).Roomid);
+            }
+        }
+
+        void f_UpdateService(object? sender, EventArgs e)
         {
             
         }
@@ -265,7 +353,14 @@ namespace HotelManagement
             cb.DataSource = RoomDAO.Instance.LoadRoomList();
             cb.DisplayMember = "roomname";
         }
-       
-        
+
+        #region Room
+
+        #endregion
+
+        #region Category
+
+        #endregion
+
     }
 }

@@ -341,6 +341,7 @@
             this.btnDeleteRoom.TabIndex = 5;
             this.btnDeleteRoom.Text = "Xóa";
             this.btnDeleteRoom.UseVisualStyleBackColor = true;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
             // 
             // btnAddRoom
             // 
@@ -479,6 +480,7 @@
             this.btnDeleteCategory.TabIndex = 5;
             this.btnDeleteCategory.Text = "Xóa";
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnAddCategory
             // 

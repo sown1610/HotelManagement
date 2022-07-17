@@ -54,14 +54,14 @@ namespace HotelManagement.DAO
 
             return result > 0;
         }
-        //public bool DeleteCategory(string username)
-        //{
+        public bool DeleteCategory(int idCategory)
+        {
+            RoomDAO.Instance.DeleteRoomByCateID(idCategory);
+            string query = string.Format("DELETE dbo.RoomCategory WHERE categoryid = {0}" ,idCategory);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-        //    string query = string.Format("" username);
-        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-        //    return result > 0;
-        //}
+            return result > 0;
+        }
 
         public int checkCategoryExist(string categoryName)
         {

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace HotelManagement.DAO
 {
     public class RoomDAO
-    {   
-        public void SwitchRoom(int id1,int id2)
+    {
+        public void SwitchRoom(int id1, int id2)
         {
             DataProvider.Instance.ExecuteQuery("USP_SwitchRoom1 @@id1 , @@id2", new object[] { id1, id2 });
         }
@@ -20,7 +20,8 @@ namespace HotelManagement.DAO
             get { if (instance == null) instance = new RoomDAO(); return instance; }
             private set { instance = value; }
         }
-        private RoomDAO() {
+        private RoomDAO()
+        {
         }
         public List<Room> LoadRoomList()
         {
@@ -55,7 +56,7 @@ namespace HotelManagement.DAO
                 room = new Room(item);
                 return room;
             }
-            
+
             return room;
         }
         public List<Room> GetListRoom()
@@ -77,16 +78,31 @@ namespace HotelManagement.DAO
 
         public Boolean InsertRoom(string roomname, int categoryid, float price)
         {
-            string query = string.Format("INSERT dbo.Room(roomname,categoryid,roomprice)VALUES(N'{0}' , {1} , {2} )", roomname,categoryid,price);
+            string query = string.Format("INSERT dbo.Room(roomname,categoryid,roomprice)VALUES(N'{0}' , {1} , {2} )", roomname, categoryid, price);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public Boolean UpdateRoom(int roomid,string roomname, int categoryid, float price)
+        public Boolean UpdateRoom(int roomid, string roomname, int categoryid, float price)
         {
             string query = string.Format("UPDATE dbo.Room SET roomname = N'{0}', categoryid = {1}, roomprice = {2} WHERE roomid = {3}", roomname, categoryid, price, roomid);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public Boolean DeleteRoom(int roomid)
+        {
+            string query = string.Format("DELETE dbo.Room WHERE roomid = {0}", roomid);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteRoomByCateID(int idCategory)
+        {
+            string query = string.Format("DELETE dbo.Room WHERE categoryid ={0}", idCategory);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;
     }

@@ -9,8 +9,6 @@ namespace HotelManagement.DTO
 {
     public class Room
     {
-        
-
 
         public Room(int roomid, string roomname, int categoryid, string status, double roomprice)
         {
