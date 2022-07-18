@@ -185,7 +185,6 @@ namespace HotelManagement
         {
 
             dtgCategories.DataSource = CategoryDAO.instance.GetListCategoryWithoutAll();
-
             categoryList.DataSource = CategoryDAO.instance.GetListCategory();
             txtCategoryID.DataBindings.Clear();
             txtCategoryName.DataBindings.Clear();

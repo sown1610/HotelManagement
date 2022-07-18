@@ -141,3 +141,4 @@ D:\Ki5_SE\PRN211\ProjectPRN\HotelManagement\Solution\HotelManagement\HotelManage
 D:\Ki5_SE\PRN211\ProjectPRN\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.pdb
 D:\Ki5_SE\PRN211\ProjectPRN\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.genruntimeconfig.cache
 D:\Ki5_SE\PRN211\ProjectPRN\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\ref\HotelManagement.dll
+C:\Users\phanl\source\repos\HotelManagement\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.Properties.Resources.resources

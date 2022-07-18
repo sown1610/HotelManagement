@@ -404,17 +404,28 @@ namespace HotelManagement
                 MessageBox.Show("Vui lòng chọn phòng cần chuyển ạ!!!");
                 return;
             }
+            
             int? id1 = room.Roomid;
             Room room2 = cbSwitchTable.SelectedItem as Room;
-            //chưa xong
+            int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
             string status = room2.Status.ToString().Trim();
             if (status.Equals("Có Người"))
             {
                 MessageBox.Show("Vui lòng chọn phòng trống!!!");
                 return;
             }
-            int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
-            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua {1} không ?",
+            
+             else if (id2.Equals(id1))
+            {
+                MessageBox.Show("Vui lòng chọn phòng khác không trùng!!!");
+                return ;
+            }
+            else if(listBill.Items.Count == 0)
+            {
+                MessageBox.Show("Danh sách dịch vụ trống nên không chuyển được !! Vui lòng thêm dịch vụ");
+                return;
+            } 
+             else if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua {1} không ?",
                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
                 "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             RoomDAO.Instance.SwitchRoom(room.Roomid, id2);
@@ -440,6 +451,11 @@ namespace HotelManagement
         }
 
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSwitchTable_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
