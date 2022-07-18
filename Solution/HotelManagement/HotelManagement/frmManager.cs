@@ -295,6 +295,10 @@ namespace HotelManagement
         {
 
             Room? room = listBill.Tag as Room;
+            int id = 0;
+
+
+            id = room.Categoryid;
             if (room == null)
             {
                 MessageBox.Show("Vui long chon mot phong!!");
@@ -312,7 +316,7 @@ namespace HotelManagement
                 OrderDetailDAO.Instance.InsertOrderDetail(idOrder, serviceid);
             }
             ShowOrder(room.Roomid);
-            LoadRoom();
+            LoadRoomByCategoryID(id);
         }
 
         private void frmManager_Load(object sender, EventArgs e)
