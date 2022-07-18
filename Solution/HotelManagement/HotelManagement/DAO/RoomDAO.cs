@@ -103,6 +103,13 @@ namespace HotelManagement.DAO
             return result > 0;
         }
 
+        public int checkRoomExsit(string roomname)
+        {
+            string query = string.Format("SELECT COUNT(*) FROM dbo.Room WHERE roomname = N'{0}'", roomname);
+            int result = Convert.ToInt32(DataProvider.Instance.ExecuteScalar(query));
+            return result;
+        }
+
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;
     }

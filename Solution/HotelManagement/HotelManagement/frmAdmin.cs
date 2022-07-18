@@ -254,6 +254,7 @@ namespace HotelManagement
 
         }
 
+
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
             string name = txtCategoryName.Text;
@@ -294,11 +295,14 @@ namespace HotelManagement
         #region Room
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            LoadListRoom();
             string name = txtroomname.Text;
             int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
             float price = (float)numRoomPrice.Value;
-
+            if (RoomDAO.Instance.checkRoomExsit(name) == 1)
+            {
+                MessageBox.Show("Không thể thêm phòng đã tồn tại");
+                return;
+            }
             if (RoomDAO.Instance.InsertRoom(name, cateid, price))
             {
                 MessageBox.Show("Thêm thành công");
@@ -338,7 +342,7 @@ namespace HotelManagement
             else
             {
                 MessageBox.Show("Có lỗi khi Delete rồi đần ");
-               
+
             }
         }
         #endregion
@@ -357,7 +361,7 @@ namespace HotelManagement
             string name = txtServicesName.Text;
             float price = (float)numServicePrice.Value;
 
-           if(ServiceDAO.Instance.checkServiceExsit(name)==1)
+            if (ServiceDAO.Instance.checkServiceExsit(name) == 1)
             {
                 MessageBox.Show("Không thể thêm dịch vụ đã tồn tại");
                 return;
