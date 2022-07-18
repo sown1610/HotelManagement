@@ -31,7 +31,7 @@ namespace HotelManagement
             LoadCategory();
             LoadService();
             LoadComboboxRoom(cbSwitchTable);
-            
+
         }
 
         void ChangeAccount(int type)
@@ -42,15 +42,39 @@ namespace HotelManagement
         void LoadCategory()
         {
             List<Category> categoryList = CategoryDAO.Instance.GetListCategory();
+            cbCategory.Items.Add("All");
             cbCategory.DataSource = categoryList;
             cbCategory.DisplayMember = "categoryname";
-            
+
         }
         void LoadRoomByCategoryID(int id)
         {
-            //List<Room> listroom = RoomDAO.Instance.GetRoomByID(id);
-            //cbRoom.DataSource = listroom;
-            //cbRoom.DisplayMember = "roomname";
+            flpRoom.Controls.Clear();
+            List<Room> listroom = RoomDAO.Instance.GetRoomByID(id);
+
+            foreach (Room item in listroom)
+            {
+                Button btn = new Button()
+                {
+                    Width = RoomDAO.RoomWidth,
+                    Height = RoomDAO.RoomHeight
+                };
+                btn.Text = item.Roomname + Environment.NewLine + item.Status;
+                btn.Click += btn_Click;
+                btn.Tag = item;
+                switch (item.Status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.LightCyan;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+                flpRoom.Controls.Add(btn);
+            }
+
+
         }
         void LoadService()
         {
@@ -127,7 +151,7 @@ namespace HotelManagement
             f.ShowDialog();
         }
 
-        void f_UpdateAccount(object sender,AccountEvent e)
+        void f_UpdateAccount(object sender, AccountEvent e)
         {
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản (" + e.Acc.DisplayName + ")";
         }
@@ -200,7 +224,7 @@ namespace HotelManagement
             LoadCategory();
             LoadService();
             LoadComboboxRoom(cbSwitchTable);
-            if(listBill.Tag != null)
+            if (listBill.Tag != null)
             {
                 ShowOrder((listBill.Tag as Room).Roomid);
             }
@@ -232,7 +256,7 @@ namespace HotelManagement
 
         void f_UpdateService(object? sender, EventArgs e)
         {
-            
+
         }
 
         private void f_DeletetService(object? sender, EventArgs e)
@@ -246,9 +270,8 @@ namespace HotelManagement
         #endregion
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             int id = 0;
-            
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
             {
@@ -263,7 +286,7 @@ namespace HotelManagement
         {
 
             Room? room = listBill.Tag as Room;
-            if(room == null)
+            if (room == null)
             {
                 MessageBox.Show("Vui long chon mot phong!!");
                 return;
@@ -372,7 +395,7 @@ namespace HotelManagement
             int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
             if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua {1} không ?",
                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
-                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK);
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             RoomDAO.Instance.SwitchRoom(room.Roomid, id2);
             LoadRoom();
         }
@@ -391,6 +414,11 @@ namespace HotelManagement
         #endregion
 
         private void btnDiscount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbService_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
