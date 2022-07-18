@@ -295,10 +295,8 @@ namespace HotelManagement
         {
 
             Room? room = listBill.Tag as Room;
-            int id = 0;
+            int id =int.Parse(cbCategory.SelectedIndex.ToString()) ;
 
-
-            id = room.Categoryid;
             if (room == null)
             {
                 MessageBox.Show("Vui long chon mot phong!!");
@@ -306,6 +304,7 @@ namespace HotelManagement
             }
             int idOrder = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
             int serviceid = (cbService.SelectedItem as Service).ServiceID;
+
             if (idOrder == -1)
             {
                 OrderDAO.Instance.InsertOrder(room.Roomid);
@@ -315,8 +314,17 @@ namespace HotelManagement
             {
                 OrderDetailDAO.Instance.InsertOrderDetail(idOrder, serviceid);
             }
+
             ShowOrder(room.Roomid);
-            LoadRoomByCategoryID(id);
+            if (id==0)
+            {
+                LoadRoom();
+            }
+            else
+            {
+                LoadRoomByCategoryID(id);
+
+            }
         }
 
         private void frmManager_Load(object sender, EventArgs e)
