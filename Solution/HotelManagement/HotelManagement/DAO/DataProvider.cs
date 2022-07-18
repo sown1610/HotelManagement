@@ -12,7 +12,7 @@ namespace HotelManagement.DAO
     {
         private static DataProvider instance;//ctrl + R + E
 
-        private string con = "Data Source=DESKTOP-VGNG77U\\FANNABY;Initial Catalog=HotelManagement;Integrated Security=True";
+        private string con = "Data Source=.\\;Initial Catalog=HotelManagement;Integrated Security=True";
 
         public static DataProvider Instance
         {

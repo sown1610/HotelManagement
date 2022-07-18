@@ -364,5 +364,9 @@ namespace HotelManagement
 
         #endregion
 
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
