@@ -318,8 +318,6 @@
             this.cbRoomCategory.Name = "cbRoomCategory";
             this.cbRoomCategory.Size = new System.Drawing.Size(221, 23);
             this.cbRoomCategory.TabIndex = 1;
-            this.cbRoomCategory.SelectedIndexChanged += new System.EventHandler(this.cbRoomCategory_SelectedIndexChanged);
-            this.cbRoomCategory.TextChanged += new System.EventHandler(this.cbRoomCategory_TextChanged);
             // 
             // label12
             // 
@@ -395,7 +393,6 @@
             this.dtgRoom.RowTemplate.Height = 25;
             this.dtgRoom.Size = new System.Drawing.Size(432, 332);
             this.dtgRoom.TabIndex = 10;
-            this.dtgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tabPage3
             // 
@@ -912,7 +909,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tài khoản";
             this.tabPage5.UseVisualStyleBackColor = true;
-            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
             // label18
             // 

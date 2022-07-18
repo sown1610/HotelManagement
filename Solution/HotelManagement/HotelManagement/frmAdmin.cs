@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,6 +26,12 @@ namespace HotelManagement
             InitializeComponent();
 
             Load();
+        }
+        public static string convertToUnSign(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
 
         #region methods
@@ -58,6 +65,22 @@ namespace HotelManagement
         }
         void AddAccount(string userName, string disPlayname, int type)
         {
+            bool containsLetter = Regex.IsMatch(userName.Trim(), @"^[a-zA-Z1-9 ]+$");
+            if (String.IsNullOrEmpty(userName.Trim()))
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống");
+                return;
+            }
+            if (String.IsNullOrEmpty(disPlayname.Trim()))
+            {
+                MessageBox.Show("Tên hiển thị không được để trống");
+                return;
+            }
+            if (!containsLetter)
+            {
+                MessageBox.Show("Định dạng 'Tên tài khoản' không hợp lệ");
+                return;
+            }
             if (AccountDAO.Instance.checkAccountExist(txtUsername.Text) == 1)
             {
                 MessageBox.Show("Không thể thêm tài khoản đã tồn tại");
@@ -76,6 +99,16 @@ namespace HotelManagement
         }
         void EditAccount(string userName, string disPlayname, int type)
         {
+            if (String.IsNullOrEmpty(userName.Trim()))
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống");
+                return;
+            }
+            if (String.IsNullOrEmpty(disPlayname.Trim()))
+            {
+                MessageBox.Show("Tên hiển thị không được để trống");
+                return;
+            }
             if (AccountDAO.Instance.UpdateAccount(userName, disPlayname, type))
             {
                 MessageBox.Show("Update tài khoản thành công");
@@ -91,18 +124,34 @@ namespace HotelManagement
         {
             if (loginAccount.UserName.Equals(userName))
             {
-                MessageBox.Show("Đừng xóa chính bạn :))))");
+                MessageBox.Show("Không thể xóa tài khoản đang được đăng nhập");
                 return;
             }
-            if (AccountDAO.Instance.DeleteAccount(userName))
+            if (MessageBox.Show(string.Format("Bạn có muốn sửa xóa tài khoản '{0}'", userName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Delete tài khoản thành công");
+                if (AccountDAO.Instance.DeleteAccount(userName))
+                {
+                    MessageBox.Show("Xóa tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nhật khoản thất bại!");
+                }
             }
-            else
-            {
-                MessageBox.Show("Delete tài khoản thất bại");
+            //if (loginAccount.UserName.Equals(userName))
+            //{
+            //    MessageBox.Show("Đừng xóa chính bạn :))))");
+            //    return;
+            //}
+            //if (AccountDAO.Instance.DeleteAccount(userName))
+            //{
+            //    MessageBox.Show("Delete tài khoản thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Delete tài khoản thất bại");
 
-            }
+            //}
             LoadAccount();
         }
         void ResetPass(string username)
@@ -236,56 +285,97 @@ namespace HotelManagement
         #region Category
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            string name = txtCategoryName.Text;
-            if (CategoryDAO.Instance.checkCategoryExist(name) == 1)
+
+            string name = Regex.Replace(txtCategoryName.Text.Trim(), " {2,}", " ");
+            bool containsLetter = Regex.IsMatch(convertToUnSign(name).ToLower(), @"^[a-zA-Z1-9 ]+$");
+            if (String.IsNullOrEmpty(name.Trim()))
             {
-                MessageBox.Show("Không thể thêm danh mục đã tồn tại");
+                MessageBox.Show("Tên không được để trống");
                 return;
             }
-            if (CategoryDAO.instance.InsertCategory(name))
+            if (!containsLetter)
             {
-                MessageBox.Show("Thêm thành công !!!");
-                loadListCategory();
-
+                MessageBox.Show("Định dạng tên không hợp lệ");
+                return;
             }
-            else
+           
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn thêm danh mục '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Thêm lỗi !!!");
+                if (CategoryDAO.Instance.InsertCategory(name))
+                {
+                    MessageBox.Show("Thêm thành công");
+                    loadListCategory();
+                    if (insertCategory != null)
+                    {
+                        insertCategory(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi thêm");
+                }
+                loadCategoryToComboBox(cbRoomCategory);
             }
-            loadCategoryToComboBox(cbRoomCategory);
 
         }
 
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
-            string name = txtCategoryName.Text;
+            string name = Regex.Replace(txtCategoryName.Text.Trim(), " {2,}", " ");
+            bool containsLetter = Regex.IsMatch(convertToUnSign(name).ToLower(), @"^[a-zA-Z1-9 ]+$");
             int categoryId = int.Parse(txtCategoryID.Text);
-            if (CategoryDAO.instance.UpdateCategory(name, categoryId))
+            if (String.IsNullOrEmpty(name.Trim()))
             {
-                MessageBox.Show("Update success");
-                loadListCategory();
-
+                MessageBox.Show("Tên không được để trống");
+                return;
             }
-            else
+            if (!containsLetter)
             {
-                MessageBox.Show("Update fail");
+                MessageBox.Show("Định dạng tên không hợp lệ");
+                return;
+            }
+            
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn sửa tên danh mục thành '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                int idCategory = Convert.ToInt32(txtCategoryID.Text);
+                if (CategoryDAO.Instance.UpdateCategory(name, idCategory))
+                {
+                    MessageBox.Show("Sửa thành công");
+                    loadListCategory();
+                    if (updateCategory != null)
+                    {
+                        updateCategory(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi Sửa");
+                }
             }
             loadCategoryToComboBox(cbRoomCategory);
 
         }
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            int categoryId = int.Parse(txtCategoryID.Text);
-            if (CategoryDAO.instance.DeleteCategory(categoryId))
-            {
-                MessageBox.Show("Delete success");
-                loadListCategory();
+            string name = Regex.Replace(txtCategoryName.Text.Trim(), " {2,}", " ");
 
-            }
-            else
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn xóa danh mục '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Delete fail");
+                int idCategory = Convert.ToInt32(txtCategoryID.Text);
+                if (CategoryDAO.Instance.DeleteCategory(idCategory))
+                {
+                    MessageBox.Show("Xóa thành công");
+                    loadListCategory();
+                    if (deleteCategory != null)
+                    {
+                        deleteCategory(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xóa");
+                }
             }
             LoadListRoom();
             loadCategoryToComboBox(cbRoomCategory);
@@ -297,9 +387,20 @@ namespace HotelManagement
         #region Room
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            string name = txtroomname.Text;
+            string name = Regex.Replace(txtroomname.Text.Trim(), " {2,}", " ");
             int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
             float price = (float)numRoomPrice.Value;
+            bool containsLetter = Regex.IsMatch(convertToUnSign(name).ToLower(), @"^[a-zA-Z1-9 ]+$");
+            if (!containsLetter)
+            {
+                MessageBox.Show("Định dạng tên không hợp lệ");
+                return;
+            }
+            if (String.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Tên không được để trống");
+                return;
+            }
             if (RoomDAO.Instance.checkRoomExsit(name) == 1)
             {
                 MessageBox.Show("Không thể thêm phòng đã tồn tại");
@@ -540,36 +641,13 @@ namespace HotelManagement
 
 
 
-        private void cboCate_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbRoomCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbRoomCategory_TextChanged(object sender, EventArgs e)
-        {
-          
-           
-        }
 
         private void txtroomid_TextChanged(object sender, EventArgs e)
         {
             if (dtgRoom.SelectedCells.Count > 0)
             {
-                int id = (int)dtgRoom.SelectedCells[1].OwningRow.Cells["categoryid"].Value;
+                int id = (int)dtgRoom.SelectedCells[0].OwningRow.Cells["categoryid"].Value;
 
                 Category category = CategoryDAO.Instance.GetCategoryByID(id);
 
@@ -579,15 +657,14 @@ namespace HotelManagement
                 int i = 0;
                 foreach (Category item in cbRoomCategory.Items)
                 {
-                    if (item.CategoryID +1== category.CategoryID)
+                    if (item.CategoryID + 1 == category.CategoryID)
                     {
                         index = i;
                         break;
                     }
                     i++;
-
                 }
-                cbRoomCategory.SelectedItem = index;
+                cbRoomCategory.SelectedIndex = index;
 
             }
         }
