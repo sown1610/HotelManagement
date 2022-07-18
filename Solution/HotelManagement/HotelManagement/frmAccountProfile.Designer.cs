@@ -46,16 +46,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.panel6);
@@ -65,14 +70,14 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 329);
+            this.panel1.Size = new System.Drawing.Size(410, 337);
             this.panel1.TabIndex = 0;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(248, 298);
+            this.btnExit.Location = new System.Drawing.Point(239, 294);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 40);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -80,9 +85,11 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(108, 298);
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnUpdate.Location = new System.Drawing.Point(57, 294);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 40);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -92,16 +99,16 @@
             // 
             this.panel6.Controls.Add(this.txtReNewPass);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(3, 239);
+            this.panel6.Location = new System.Drawing.Point(3, 251);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(425, 53);
+            this.panel6.Size = new System.Drawing.Size(404, 41);
             this.panel6.TabIndex = 10;
             // 
             // txtReNewPass
             // 
-            this.txtReNewPass.Location = new System.Drawing.Point(111, 14);
+            this.txtReNewPass.Location = new System.Drawing.Point(105, 14);
             this.txtReNewPass.Name = "txtReNewPass";
-            this.txtReNewPass.Size = new System.Drawing.Size(317, 23);
+            this.txtReNewPass.Size = new System.Drawing.Size(283, 23);
             this.txtReNewPass.TabIndex = 1;
             // 
             // label5
@@ -109,24 +116,24 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 15);
+            this.label5.Size = new System.Drawing.Size(54, 15);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Nhập lại mật khẩu mới:";
+            this.label5.Text = "Nhập lại:";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.txtNewPass);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(3, 180);
+            this.panel5.Location = new System.Drawing.Point(3, 201);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(425, 53);
+            this.panel5.Size = new System.Drawing.Size(404, 44);
             this.panel5.TabIndex = 9;
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(111, 14);
+            this.txtNewPass.Location = new System.Drawing.Point(105, 17);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(317, 23);
+            this.txtNewPass.Size = new System.Drawing.Size(283, 23);
             this.txtNewPass.TabIndex = 1;
             // 
             // label4
@@ -142,16 +149,16 @@
             // 
             this.panel4.Controls.Add(this.txtPass);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(3, 121);
+            this.panel4.Location = new System.Drawing.Point(3, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(425, 53);
+            this.panel4.Size = new System.Drawing.Size(404, 41);
             this.panel4.TabIndex = 8;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(111, 14);
+            this.txtPass.Location = new System.Drawing.Point(105, 14);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(317, 23);
+            this.txtPass.Size = new System.Drawing.Size(283, 23);
             this.txtPass.TabIndex = 1;
             // 
             // label3
@@ -167,16 +174,16 @@
             // 
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 62);
+            this.panel3.Location = new System.Drawing.Point(3, 106);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 53);
+            this.panel3.Size = new System.Drawing.Size(404, 42);
             this.panel3.TabIndex = 7;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(105, 14);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(317, 23);
+            this.txtName.Size = new System.Drawing.Size(283, 23);
             this.txtName.TabIndex = 1;
             // 
             // label2
@@ -192,17 +199,17 @@
             // 
             this.panel2.Controls.Add(this.txtUser);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(425, 53);
+            this.panel2.Size = new System.Drawing.Size(404, 38);
             this.panel2.TabIndex = 6;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(105, 14);
+            this.txtUser.Location = new System.Drawing.Point(108, 15);
             this.txtUser.Name = "txtUser";
             this.txtUser.ReadOnly = true;
-            this.txtUser.Size = new System.Drawing.Size(317, 23);
+            this.txtUser.Size = new System.Drawing.Size(283, 23);
             this.txtUser.TabIndex = 1;
             // 
             // label1
@@ -214,18 +221,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(181, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(207, 27);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "THÔNG TIN CÁ NHÂN";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.FPTnew;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAccountProfile
             // 
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(455, 353);
+            this.ClientSize = new System.Drawing.Size(434, 361);
             this.Controls.Add(this.panel1);
             this.Name = "frmAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
+            this.Load += new System.EventHandler(this.frmAccountProfile_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -236,6 +265,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,5 +290,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

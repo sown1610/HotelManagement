@@ -489,11 +489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "projectUniqueName": "F:\\FPT\\Learning\\PRNProject\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
       "projectName": "HotelManagement",
-      "projectPath": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+      "projectPath": "F:\\FPT\\Learning\\PRNProject\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
       "packagesPath": "C:\\Users\\Sown\\.nuget\\packages\\",
-      "outputPath": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\obj\\",
+      "outputPath": "F:\\FPT\\Learning\\PRNProject\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sown\\AppData\\Roaming\\NuGet\\NuGet.Config",

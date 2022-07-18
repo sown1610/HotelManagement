@@ -543,6 +543,14 @@ namespace HotelManagement
 
         }
 
-       
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRoomCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

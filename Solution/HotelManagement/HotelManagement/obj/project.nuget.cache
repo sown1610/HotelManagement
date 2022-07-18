@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e0/EvIMyx7w8J9rmkypK13inybhFycmJPHrzmNbpJCGJH93sw3VuOSVke794x9C6S/iM/tQ+IMhHZSqsSc0Cbg==",
+  "dgSpecHash": "Mq2taFtRlJnAayFWd2lFkBmmmQFWScf21FnAO4Xm51i23RStTtLJQDDvsKNi5ns7tvXyQWfxYOcEvDzRTukt7A==",
   "success": true,
-  "projectFilePath": "F:\\FPT\\Learning\\PRNProject\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+  "projectFilePath": "F:\\FPT\\Learning\\PRNProject\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sown\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Sown\\.nuget\\packages\\microsoft.win32.registry\\4.4.0\\microsoft.win32.registry.4.4.0.nupkg.sha512",

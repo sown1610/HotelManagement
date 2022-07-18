@@ -44,12 +44,13 @@ namespace HotelManagement
             List<Category> categoryList = CategoryDAO.Instance.GetListCategory();
             cbCategory.DataSource = categoryList;
             cbCategory.DisplayMember = "categoryname";
+            
         }
         void LoadRoomByCategoryID(int id)
         {
-            List<Room> listroom = RoomDAO.Instance.GetRoomByID(id);
-            cbRoom.DataSource = listroom;
-            cbRoom.DisplayMember = "roomname";
+            //List<Room> listroom = RoomDAO.Instance.GetRoomByID(id);
+            //cbRoom.DataSource = listroom;
+            //cbRoom.DisplayMember = "roomname";
         }
         void LoadService()
         {
@@ -261,7 +262,12 @@ namespace HotelManagement
         private void btnAddServices_Click(object sender, EventArgs e)
         {
 
-            Room room = listBill.Tag as Room;
+            Room? room = listBill.Tag as Room;
+            if(room == null)
+            {
+                MessageBox.Show("Vui long chon mot phong!!");
+                return;
+            }
             int idOrder = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
             int serviceid = (cbService.SelectedItem as Service).ServiceID;
             if (idOrder == -1)
@@ -290,6 +296,11 @@ namespace HotelManagement
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             Room room = listBill.Tag as Room;
+            if (room == null)
+            {
+                MessageBox.Show("Vui long chon mot phong!!");
+                return;
+            }
             int roomid = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
             if (roomid != -1)
             {

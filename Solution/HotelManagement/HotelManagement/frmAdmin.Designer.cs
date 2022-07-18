@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.btnViewRoom = new System.Windows.Forms.Button();
+            this.btnUpdateRoom = new System.Windows.Forms.Button();
+            this.btnDeleteRoom = new System.Windows.Forms.Button();
+            this.btnAddRoom = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.numRoomPrice = new System.Windows.Forms.NumericUpDown();
@@ -43,12 +50,14 @@
             this.txtroomid = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtgRoom = new System.Windows.Forms.DataGridView();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.btnViewRoom = new System.Windows.Forms.Button();
-            this.btnUpdateRoom = new System.Windows.Forms.Button();
-            this.btnDeleteRoom = new System.Windows.Forms.Button();
-            this.btnAddRoom = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btnViewCategory = new System.Windows.Forms.Button();
+            this.btnUpdateCategory = new System.Windows.Forms.Button();
+            this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnAddCategory = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
@@ -57,12 +66,9 @@
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgCategories = new System.Windows.Forms.DataGridView();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.btnViewCategory = new System.Windows.Forms.Button();
-            this.btnUpdateCategory = new System.Windows.Forms.Button();
-            this.btnDeleteCategory = new System.Windows.Forms.Button();
-            this.btnAddCategory = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.numServicePrice = new System.Windows.Forms.NumericUpDown();
@@ -93,6 +99,13 @@
             this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.btnViewAccount = new System.Windows.Forms.Button();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnAddAccount = new System.Windows.Forms.Button();
             this.dtgAccount = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
@@ -107,13 +120,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.btnViewAccount = new System.Windows.Forms.Button();
-            this.btnUpdateAccount = new System.Windows.Forms.Button();
-            this.btnDeleteAccount = new System.Windows.Forms.Button();
-            this.btnAddAccount = new System.Windows.Forms.Button();
+            this.btnSearchAccount = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel18.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRoomPrice)).BeginInit();
@@ -121,14 +131,15 @@
             this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).BeginInit();
-            this.panel18.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel16.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategories)).BeginInit();
-            this.panel16.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numServicePrice)).BeginInit();
@@ -143,6 +154,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvOrder)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAccount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,14 +163,15 @@
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
-            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.pictureBox3);
+            this.tabPage4.Controls.Add(this.panel18);
             this.tabPage4.Controls.Add(this.panel12);
             this.tabPage4.Controls.Add(this.dtgRoom);
-            this.tabPage4.Controls.Add(this.panel18);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -166,15 +180,94 @@
             this.tabPage4.Text = "Phòng";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(586, 17);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(169, 27);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "QUẢN LÝ PHÒNG";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HotelManagement.Properties.Resources.FPTnew;
+            this.pictureBox3.Location = new System.Drawing.Point(383, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(167, 57);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.btnViewRoom);
+            this.panel18.Controls.Add(this.btnUpdateRoom);
+            this.panel18.Controls.Add(this.btnDeleteRoom);
+            this.panel18.Controls.Add(this.btnAddRoom);
+            this.panel18.Location = new System.Drawing.Point(8, 7);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(369, 52);
+            this.panel18.TabIndex = 10;
+            // 
+            // btnViewRoom
+            // 
+            this.btnViewRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewRoom.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.btnViewRoom.Location = new System.Drawing.Point(255, 3);
+            this.btnViewRoom.Name = "btnViewRoom";
+            this.btnViewRoom.Size = new System.Drawing.Size(78, 46);
+            this.btnViewRoom.TabIndex = 7;
+            this.btnViewRoom.Text = "Xem";
+            this.btnViewRoom.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateRoom
+            // 
+            this.btnUpdateRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateRoom.ForeColor = System.Drawing.Color.Sienna;
+            this.btnUpdateRoom.Location = new System.Drawing.Point(87, 3);
+            this.btnUpdateRoom.Name = "btnUpdateRoom";
+            this.btnUpdateRoom.Size = new System.Drawing.Size(78, 46);
+            this.btnUpdateRoom.TabIndex = 6;
+            this.btnUpdateRoom.Text = "Sửa";
+            this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
+            // 
+            // btnDeleteRoom
+            // 
+            this.btnDeleteRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnDeleteRoom.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(78, 46);
+            this.btnDeleteRoom.TabIndex = 5;
+            this.btnDeleteRoom.Text = "Xóa";
+            this.btnDeleteRoom.UseVisualStyleBackColor = true;
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
+            // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddRoom.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(78, 46);
+            this.btnAddRoom.TabIndex = 4;
+            this.btnAddRoom.Text = "Thêm";
+            this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
+            // 
             // panel12
             // 
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.panel20);
             this.panel12.Controls.Add(this.panel19);
             this.panel12.Controls.Add(this.panel15);
             this.panel12.Controls.Add(this.panel17);
-            this.panel12.Location = new System.Drawing.Point(449, 65);
+            this.panel12.Location = new System.Drawing.Point(449, 111);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(325, 338);
+            this.panel12.Size = new System.Drawing.Size(325, 228);
             this.panel12.TabIndex = 9;
             // 
             // panel20
@@ -225,6 +318,7 @@
             this.cbRoomCategory.Name = "cbRoomCategory";
             this.cbRoomCategory.Size = new System.Drawing.Size(221, 23);
             this.cbRoomCategory.TabIndex = 1;
+            this.cbRoomCategory.SelectedIndexChanged += new System.EventHandler(this.cbRoomCategory_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -291,6 +385,7 @@
             // 
             // dtgRoom
             // 
+            this.dtgRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoom.Location = new System.Drawing.Point(6, 65);
             this.dtgRoom.Name = "dtgRoom";
@@ -300,65 +395,13 @@
             this.dtgRoom.TabIndex = 10;
             this.dtgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.btnViewRoom);
-            this.panel18.Controls.Add(this.btnUpdateRoom);
-            this.panel18.Controls.Add(this.btnDeleteRoom);
-            this.panel18.Controls.Add(this.btnAddRoom);
-            this.panel18.Location = new System.Drawing.Point(8, 7);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(369, 52);
-            this.panel18.TabIndex = 8;
-            // 
-            // btnViewRoom
-            // 
-            this.btnViewRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnViewRoom.Location = new System.Drawing.Point(255, 3);
-            this.btnViewRoom.Name = "btnViewRoom";
-            this.btnViewRoom.Size = new System.Drawing.Size(78, 46);
-            this.btnViewRoom.TabIndex = 7;
-            this.btnViewRoom.Text = "Xem";
-            this.btnViewRoom.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateRoom
-            // 
-            this.btnUpdateRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnUpdateRoom.Location = new System.Drawing.Point(87, 3);
-            this.btnUpdateRoom.Name = "btnUpdateRoom";
-            this.btnUpdateRoom.Size = new System.Drawing.Size(78, 46);
-            this.btnUpdateRoom.TabIndex = 6;
-            this.btnUpdateRoom.Text = "Sửa";
-            this.btnUpdateRoom.UseVisualStyleBackColor = true;
-            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
-            // 
-            // btnDeleteRoom
-            // 
-            this.btnDeleteRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteRoom.Location = new System.Drawing.Point(171, 3);
-            this.btnDeleteRoom.Name = "btnDeleteRoom";
-            this.btnDeleteRoom.Size = new System.Drawing.Size(78, 46);
-            this.btnDeleteRoom.TabIndex = 5;
-            this.btnDeleteRoom.Text = "Xóa";
-            this.btnDeleteRoom.UseVisualStyleBackColor = true;
-            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
-            // 
-            // btnAddRoom
-            // 
-            this.btnAddRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnAddRoom.Location = new System.Drawing.Point(3, 3);
-            this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(78, 46);
-            this.btnAddRoom.TabIndex = 4;
-            this.btnAddRoom.Text = "Thêm";
-            this.btnAddRoom.UseVisualStyleBackColor = true;
-            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.pictureBox2);
+            this.tabPage3.Controls.Add(this.panel16);
             this.tabPage3.Controls.Add(this.panel10);
             this.tabPage3.Controls.Add(this.dtgCategories);
-            this.tabPage3.Controls.Add(this.panel16);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -367,13 +410,92 @@
             this.tabPage3.Text = "Danh mục";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(569, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(201, 27);
+            this.label16.TabIndex = 17;
+            this.label16.Text = "QUẢN LÝ DANH MỤC";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HotelManagement.Properties.Resources.FPTnew;
+            this.pictureBox2.Location = new System.Drawing.Point(383, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 57);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.btnViewCategory);
+            this.panel16.Controls.Add(this.btnUpdateCategory);
+            this.panel16.Controls.Add(this.btnDeleteCategory);
+            this.panel16.Controls.Add(this.btnAddCategory);
+            this.panel16.Location = new System.Drawing.Point(8, 6);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(369, 52);
+            this.panel16.TabIndex = 8;
+            // 
+            // btnViewCategory
+            // 
+            this.btnViewCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewCategory.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.btnViewCategory.Location = new System.Drawing.Point(255, 3);
+            this.btnViewCategory.Name = "btnViewCategory";
+            this.btnViewCategory.Size = new System.Drawing.Size(78, 46);
+            this.btnViewCategory.TabIndex = 7;
+            this.btnViewCategory.Text = "Xem";
+            this.btnViewCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateCategory
+            // 
+            this.btnUpdateCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateCategory.ForeColor = System.Drawing.Color.Sienna;
+            this.btnUpdateCategory.Location = new System.Drawing.Point(87, 3);
+            this.btnUpdateCategory.Name = "btnUpdateCategory";
+            this.btnUpdateCategory.Size = new System.Drawing.Size(78, 46);
+            this.btnUpdateCategory.TabIndex = 6;
+            this.btnUpdateCategory.Text = "Sửa";
+            this.btnUpdateCategory.UseVisualStyleBackColor = true;
+            this.btnUpdateCategory.Click += new System.EventHandler(this.btnUpdateCategory_Click);
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteCategory.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnDeleteCategory.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(78, 46);
+            this.btnDeleteCategory.TabIndex = 5;
+            this.btnDeleteCategory.Text = "Xóa";
+            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddCategory.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAddCategory.Location = new System.Drawing.Point(3, 3);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(78, 46);
+            this.btnAddCategory.TabIndex = 4;
+            this.btnAddCategory.Text = "Thêm";
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
             // panel10
             // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.panel13);
             this.panel10.Controls.Add(this.panel14);
-            this.panel10.Location = new System.Drawing.Point(451, 68);
+            this.panel10.Location = new System.Drawing.Point(446, 69);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(325, 338);
+            this.panel10.Size = new System.Drawing.Size(328, 118);
             this.panel10.TabIndex = 6;
             // 
             // panel13
@@ -431,6 +553,7 @@
             // 
             // dtgCategories
             // 
+            this.dtgCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCategories.Location = new System.Drawing.Point(8, 68);
             this.dtgCategories.Name = "dtgCategories";
@@ -439,62 +562,10 @@
             this.dtgCategories.Size = new System.Drawing.Size(432, 332);
             this.dtgCategories.TabIndex = 7;
             // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.btnViewCategory);
-            this.panel16.Controls.Add(this.btnUpdateCategory);
-            this.panel16.Controls.Add(this.btnDeleteCategory);
-            this.panel16.Controls.Add(this.btnAddCategory);
-            this.panel16.Location = new System.Drawing.Point(10, 10);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(369, 52);
-            this.panel16.TabIndex = 4;
-            // 
-            // btnViewCategory
-            // 
-            this.btnViewCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnViewCategory.Location = new System.Drawing.Point(255, 3);
-            this.btnViewCategory.Name = "btnViewCategory";
-            this.btnViewCategory.Size = new System.Drawing.Size(78, 46);
-            this.btnViewCategory.TabIndex = 7;
-            this.btnViewCategory.Text = "Xem";
-            this.btnViewCategory.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateCategory
-            // 
-            this.btnUpdateCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnUpdateCategory.Location = new System.Drawing.Point(87, 3);
-            this.btnUpdateCategory.Name = "btnUpdateCategory";
-            this.btnUpdateCategory.Size = new System.Drawing.Size(78, 46);
-            this.btnUpdateCategory.TabIndex = 6;
-            this.btnUpdateCategory.Text = "Sửa";
-            this.btnUpdateCategory.UseVisualStyleBackColor = true;
-            this.btnUpdateCategory.Click += new System.EventHandler(this.btnUpdateCategory_Click);
-            // 
-            // btnDeleteCategory
-            // 
-            this.btnDeleteCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteCategory.Location = new System.Drawing.Point(171, 3);
-            this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(78, 46);
-            this.btnDeleteCategory.TabIndex = 5;
-            this.btnDeleteCategory.Text = "Xóa";
-            this.btnDeleteCategory.UseVisualStyleBackColor = true;
-            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnAddCategory.Location = new System.Drawing.Point(3, 3);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(78, 46);
-            this.btnAddCategory.TabIndex = 4;
-            this.btnAddCategory.Text = "Thêm";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.panel7);
             this.tabPage2.Controls.Add(this.panel6);
             this.tabPage2.Controls.Add(this.panel5);
@@ -507,14 +578,35 @@
             this.tabPage2.Text = "Dịch vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(573, 16);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(177, 27);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "QUẢN LÝ DỊCH VỤ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.FPTnew;
+            this.pictureBox1.Location = new System.Drawing.Point(383, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(167, 57);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel7
             // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.panel11);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(449, 66);
+            this.panel7.Location = new System.Drawing.Point(450, 166);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(325, 338);
+            this.panel7.Size = new System.Drawing.Size(325, 172);
             this.panel7.TabIndex = 2;
             // 
             // panel11
@@ -604,24 +696,26 @@
             // 
             // panel6
             // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.txtServicesSearchName);
             this.panel6.Controls.Add(this.btnSearchServices);
-            this.panel6.Location = new System.Drawing.Point(383, 8);
+            this.panel6.Location = new System.Drawing.Point(449, 69);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(391, 52);
+            this.panel6.Size = new System.Drawing.Size(325, 55);
             this.panel6.TabIndex = 1;
             // 
             // txtServicesSearchName
             // 
-            this.txtServicesSearchName.Location = new System.Drawing.Point(3, 16);
+            this.txtServicesSearchName.Location = new System.Drawing.Point(3, 17);
             this.txtServicesSearchName.Name = "txtServicesSearchName";
-            this.txtServicesSearchName.Size = new System.Drawing.Size(301, 23);
+            this.txtServicesSearchName.Size = new System.Drawing.Size(227, 23);
             this.txtServicesSearchName.TabIndex = 9;
             // 
             // btnSearchServices
             // 
             this.btnSearchServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnSearchServices.Location = new System.Drawing.Point(310, 3);
+            this.btnSearchServices.ForeColor = System.Drawing.Color.Purple;
+            this.btnSearchServices.Location = new System.Drawing.Point(241, 3);
             this.btnSearchServices.Name = "btnSearchServices";
             this.btnSearchServices.Size = new System.Drawing.Size(78, 46);
             this.btnSearchServices.TabIndex = 8;
@@ -639,6 +733,7 @@
             // 
             // dtgServices
             // 
+            this.dtgServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgServices.Location = new System.Drawing.Point(3, 3);
             this.dtgServices.Name = "dtgServices";
@@ -653,7 +748,7 @@
             this.panel4.Controls.Add(this.btnUpdateServices);
             this.panel4.Controls.Add(this.btnDeleteServices);
             this.panel4.Controls.Add(this.btnAddServices);
-            this.panel4.Location = new System.Drawing.Point(8, 8);
+            this.panel4.Location = new System.Drawing.Point(8, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(369, 52);
             this.panel4.TabIndex = 0;
@@ -661,6 +756,7 @@
             // btnViewServices
             // 
             this.btnViewServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewServices.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.btnViewServices.Location = new System.Drawing.Point(255, 3);
             this.btnViewServices.Name = "btnViewServices";
             this.btnViewServices.Size = new System.Drawing.Size(78, 46);
@@ -672,6 +768,7 @@
             // btnUpdateServices
             // 
             this.btnUpdateServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateServices.ForeColor = System.Drawing.Color.Sienna;
             this.btnUpdateServices.Location = new System.Drawing.Point(87, 3);
             this.btnUpdateServices.Name = "btnUpdateServices";
             this.btnUpdateServices.Size = new System.Drawing.Size(78, 46);
@@ -683,6 +780,7 @@
             // btnDeleteServices
             // 
             this.btnDeleteServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteServices.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.btnDeleteServices.Location = new System.Drawing.Point(171, 3);
             this.btnDeleteServices.Name = "btnDeleteServices";
             this.btnDeleteServices.Size = new System.Drawing.Size(78, 46);
@@ -694,6 +792,7 @@
             // btnAddServices
             // 
             this.btnAddServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddServices.ForeColor = System.Drawing.Color.DarkRed;
             this.btnAddServices.Location = new System.Drawing.Point(3, 3);
             this.btnAddServices.Name = "btnAddServices";
             this.btnAddServices.Size = new System.Drawing.Size(78, 46);
@@ -745,16 +844,18 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.dtpkToDate);
             this.panel3.Controls.Add(this.dtpkFromDate);
-            this.panel3.Location = new System.Drawing.Point(84, 6);
+            this.panel3.Location = new System.Drawing.Point(74, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(601, 29);
+            this.panel3.Size = new System.Drawing.Size(619, 51);
             this.panel3.TabIndex = 2;
             // 
             // btnViewOrder
             // 
-            this.btnViewOrder.Location = new System.Drawing.Point(511, 3);
+            this.btnViewOrder.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewOrder.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnViewOrder.Location = new System.Drawing.Point(515, 9);
             this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnViewOrder.Size = new System.Drawing.Size(98, 36);
             this.btnViewOrder.TabIndex = 5;
             this.btnViewOrder.Text = "Thống kê";
             this.btnViewOrder.UseVisualStyleBackColor = true;
@@ -764,7 +865,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(256, 4);
+            this.label3.Location = new System.Drawing.Point(256, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 19);
             this.label3.TabIndex = 4;
@@ -774,7 +875,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Location = new System.Drawing.Point(3, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 19);
             this.label4.TabIndex = 3;
@@ -782,24 +883,26 @@
             // 
             // dtpkToDate
             // 
-            this.dtpkToDate.Location = new System.Drawing.Point(284, 3);
+            this.dtpkToDate.Location = new System.Drawing.Point(284, 16);
             this.dtpkToDate.Name = "dtpkToDate";
             this.dtpkToDate.Size = new System.Drawing.Size(200, 23);
             this.dtpkToDate.TabIndex = 2;
             // 
             // dtpkFromDate
             // 
-            this.dtpkFromDate.Location = new System.Drawing.Point(50, 4);
+            this.dtpkFromDate.Location = new System.Drawing.Point(50, 16);
             this.dtpkFromDate.Name = "dtpkFromDate";
             this.dtpkFromDate.Size = new System.Drawing.Size(200, 23);
             this.dtpkFromDate.TabIndex = 1;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.pictureBox4);
+            this.tabPage5.Controls.Add(this.panel24);
             this.tabPage5.Controls.Add(this.dtgAccount);
             this.tabPage5.Controls.Add(this.panel1);
             this.tabPage5.Controls.Add(this.panel23);
-            this.tabPage5.Controls.Add(this.panel24);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -807,9 +910,90 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tài khoản";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(565, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(203, 27);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "QUẢN LÝ TÀI KHOẢN";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HotelManagement.Properties.Resources.FPTnew;
+            this.pictureBox4.Location = new System.Drawing.Point(389, 5);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(167, 57);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 20;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.btnViewAccount);
+            this.panel24.Controls.Add(this.btnUpdateAccount);
+            this.panel24.Controls.Add(this.btnDeleteAccount);
+            this.panel24.Controls.Add(this.btnAddAccount);
+            this.panel24.Location = new System.Drawing.Point(8, 6);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(369, 52);
+            this.panel24.TabIndex = 11;
+            // 
+            // btnViewAccount
+            // 
+            this.btnViewAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewAccount.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.btnViewAccount.Location = new System.Drawing.Point(255, 3);
+            this.btnViewAccount.Name = "btnViewAccount";
+            this.btnViewAccount.Size = new System.Drawing.Size(78, 46);
+            this.btnViewAccount.TabIndex = 7;
+            this.btnViewAccount.Text = "Xem";
+            this.btnViewAccount.UseVisualStyleBackColor = true;
+            this.btnViewAccount.Click += new System.EventHandler(this.btnViewAccount_Click);
+            // 
+            // btnUpdateAccount
+            // 
+            this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateAccount.ForeColor = System.Drawing.Color.Sienna;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(87, 3);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Size = new System.Drawing.Size(78, 46);
+            this.btnUpdateAccount.TabIndex = 6;
+            this.btnUpdateAccount.Text = "Sửa";
+            this.btnUpdateAccount.UseVisualStyleBackColor = true;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
+            // 
+            // btnDeleteAccount
+            // 
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteAccount.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnDeleteAccount.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(78, 46);
+            this.btnDeleteAccount.TabIndex = 5;
+            this.btnDeleteAccount.Text = "Xóa";
+            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
+            // 
+            // btnAddAccount
+            // 
+            this.btnAddAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddAccount.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAddAccount.Location = new System.Drawing.Point(3, 3);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Size = new System.Drawing.Size(78, 46);
+            this.btnAddAccount.TabIndex = 4;
+            this.btnAddAccount.Text = "Thêm";
+            this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // dtgAccount
             // 
+            this.dtgAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAccount.Location = new System.Drawing.Point(7, 68);
             this.dtgAccount.Name = "dtgAccount";
@@ -820,21 +1004,23 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnResetPassword);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel21);
             this.panel1.Controls.Add(this.panel22);
-            this.panel1.Location = new System.Drawing.Point(451, 68);
+            this.panel1.Location = new System.Drawing.Point(450, 152);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 338);
+            this.panel1.Size = new System.Drawing.Size(325, 224);
             this.panel1.TabIndex = 6;
             // 
             // btnResetPassword
             // 
             this.btnResetPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnResetPassword.Location = new System.Drawing.Point(241, 171);
+            this.btnResetPassword.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnResetPassword.Location = new System.Drawing.Point(6, 171);
             this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(78, 46);
+            this.btnResetPassword.Size = new System.Drawing.Size(313, 46);
             this.btnResetPassword.TabIndex = 8;
             this.btnResetPassword.Text = "Đặt lại mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
@@ -925,95 +1111,45 @@
             // 
             // panel23
             // 
+            this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel23.Controls.Add(this.textBox5);
-            this.panel23.Controls.Add(this.button2);
-            this.panel23.Location = new System.Drawing.Point(385, 10);
+            this.panel23.Controls.Add(this.btnSearchAccount);
+            this.panel23.Location = new System.Drawing.Point(450, 81);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(391, 52);
+            this.panel23.Size = new System.Drawing.Size(325, 52);
             this.panel23.TabIndex = 5;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(3, 16);
+            this.textBox5.Location = new System.Drawing.Point(4, 16);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(301, 23);
+            this.textBox5.Size = new System.Drawing.Size(227, 23);
             this.textBox5.TabIndex = 9;
             // 
-            // button2
+            // btnSearchAccount
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(310, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 46);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Tìm";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.btnViewAccount);
-            this.panel24.Controls.Add(this.btnUpdateAccount);
-            this.panel24.Controls.Add(this.btnDeleteAccount);
-            this.panel24.Controls.Add(this.btnAddAccount);
-            this.panel24.Location = new System.Drawing.Point(10, 10);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(369, 52);
-            this.panel24.TabIndex = 4;
-            // 
-            // btnViewAccount
-            // 
-            this.btnViewAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnViewAccount.Location = new System.Drawing.Point(255, 3);
-            this.btnViewAccount.Name = "btnViewAccount";
-            this.btnViewAccount.Size = new System.Drawing.Size(78, 46);
-            this.btnViewAccount.TabIndex = 7;
-            this.btnViewAccount.Text = "Xem";
-            this.btnViewAccount.UseVisualStyleBackColor = true;
-            this.btnViewAccount.Click += new System.EventHandler(this.btnViewAccount_Click);
-            // 
-            // btnUpdateAccount
-            // 
-            this.btnUpdateAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnUpdateAccount.Location = new System.Drawing.Point(87, 3);
-            this.btnUpdateAccount.Name = "btnUpdateAccount";
-            this.btnUpdateAccount.Size = new System.Drawing.Size(78, 46);
-            this.btnUpdateAccount.TabIndex = 6;
-            this.btnUpdateAccount.Text = "Sửa";
-            this.btnUpdateAccount.UseVisualStyleBackColor = true;
-            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
-            // 
-            // btnDeleteAccount
-            // 
-            this.btnDeleteAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteAccount.Location = new System.Drawing.Point(171, 3);
-            this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(78, 46);
-            this.btnDeleteAccount.TabIndex = 5;
-            this.btnDeleteAccount.Text = "Xóa";
-            this.btnDeleteAccount.UseVisualStyleBackColor = true;
-            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
-            // 
-            // btnAddAccount
-            // 
-            this.btnAddAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnAddAccount.Location = new System.Drawing.Point(3, 3);
-            this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(78, 46);
-            this.btnAddAccount.TabIndex = 4;
-            this.btnAddAccount.Text = "Thêm";
-            this.btnAddAccount.UseVisualStyleBackColor = true;
-            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            this.btnSearchAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnSearchAccount.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.btnSearchAccount.Location = new System.Drawing.Point(237, 2);
+            this.btnSearchAccount.Name = "btnSearchAccount";
+            this.btnSearchAccount.Size = new System.Drawing.Size(78, 46);
+            this.btnSearchAccount.TabIndex = 8;
+            this.btnSearchAccount.Text = "Tìm";
+            this.btnSearchAccount.UseVisualStyleBackColor = true;
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(791, 444);
             this.Controls.Add(this.tcAccount);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel18.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
@@ -1025,16 +1161,19 @@
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoom)).EndInit();
-            this.panel18.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel16.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategories)).EndInit();
-            this.panel16.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
@@ -1054,6 +1193,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgAccount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1065,7 +1207,6 @@
             this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            this.panel24.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1113,11 +1254,6 @@
         private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dtgCategories;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button btnViewCategory;
-        private System.Windows.Forms.Button btnUpdateCategory;
-        private System.Windows.Forms.Button btnDeleteCategory;
-        private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label label13;
@@ -1131,11 +1267,6 @@
         private System.Windows.Forms.TextBox txtroomid;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dtgRoom;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button btnViewRoom;
-        private System.Windows.Forms.Button btnUpdateRoom;
-        private System.Windows.Forms.Button btnDeleteRoom;
-        private System.Windows.Forms.Button btnAddRoom;
         private System.Windows.Forms.DataGridView dtgAccount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResetPassword;
@@ -1149,13 +1280,31 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearchAccount;
+        private System.Windows.Forms.NumericUpDown numRoomPrice;
+        private System.Windows.Forms.NumericUpDown nmTypeAcc;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button btnViewRoom;
+        private System.Windows.Forms.Button btnUpdateRoom;
+        private System.Windows.Forms.Button btnDeleteRoom;
+        private System.Windows.Forms.Button btnAddRoom;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button btnViewCategory;
+        private System.Windows.Forms.Button btnUpdateCategory;
+        private System.Windows.Forms.Button btnDeleteCategory;
+        private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Button btnViewAccount;
         private System.Windows.Forms.Button btnUpdateAccount;
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnAddAccount;
-        private System.Windows.Forms.NumericUpDown numRoomPrice;
-        private System.Windows.Forms.NumericUpDown nmTypeAcc;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

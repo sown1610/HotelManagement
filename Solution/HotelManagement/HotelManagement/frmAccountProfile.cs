@@ -80,6 +80,11 @@ namespace HotelManagement
         {
             UpdateAccountInfor();
         }
+
+        private void frmAccountProfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     public class AccountEvent:EventArgs
     {

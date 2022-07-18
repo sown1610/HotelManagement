@@ -45,7 +45,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.numDiscount = new System.Windows.Forms.NumericUpDown();
-            this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbService = new System.Windows.Forms.ComboBox();
@@ -53,8 +52,9 @@
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -117,6 +117,7 @@
             // listBill
             // 
             this.listBill.BackColor = System.Drawing.SystemColors.Menu;
+            this.listBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ServiceID,
             this.TotalPrice,
@@ -155,12 +156,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnSwitchRoom);
             this.panel3.Controls.Add(this.txtTotal);
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.numDiscount);
-            this.panel3.Controls.Add(this.btnDiscount);
             this.panel3.Controls.Add(this.btnCheckOut);
             this.panel3.Location = new System.Drawing.Point(471, 488);
             this.panel3.Name = "panel3";
@@ -172,7 +173,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(123, 5);
+            this.label1.Location = new System.Drawing.Point(108, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 8;
@@ -198,7 +199,6 @@
             this.txtTotal.Size = new System.Drawing.Size(116, 25);
             this.txtTotal.TabIndex = 7;
             this.txtTotal.Text = "0";
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // cbSwitchTable
@@ -211,21 +211,11 @@
             // 
             // numDiscount
             // 
-            this.numDiscount.Location = new System.Drawing.Point(230, 3);
+            this.numDiscount.Location = new System.Drawing.Point(230, 33);
             this.numDiscount.Name = "numDiscount";
             this.numDiscount.Size = new System.Drawing.Size(64, 23);
             this.numDiscount.TabIndex = 4;
             this.numDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnDiscount
-            // 
-            this.btnDiscount.Location = new System.Drawing.Point(230, 29);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(64, 28);
-            this.btnDiscount.TabIndex = 5;
-            this.btnDiscount.Text = "Giảm giá";
-            this.btnDiscount.UseVisualStyleBackColor = true;
-            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // btnCheckOut
             // 
@@ -244,15 +234,15 @@
             this.panel4.Controls.Add(this.cbService);
             this.panel4.Controls.Add(this.btnAddServices);
             this.panel4.Controls.Add(this.cbCategory);
-            this.panel4.Location = new System.Drawing.Point(471, 45);
+            this.panel4.Location = new System.Drawing.Point(563, 54);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(401, 73);
+            this.panel4.Size = new System.Drawing.Size(309, 67);
             this.panel4.TabIndex = 2;
             // 
             // cbService
             // 
             this.cbService.FormattingEnabled = true;
-            this.cbService.Location = new System.Drawing.Point(3, 47);
+            this.cbService.Location = new System.Drawing.Point(3, 34);
             this.cbService.Name = "cbService";
             this.cbService.Size = new System.Drawing.Size(203, 23);
             this.cbService.TabIndex = 4;
@@ -261,9 +251,9 @@
             // 
             this.btnAddServices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddServices.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnAddServices.Location = new System.Drawing.Point(300, 3);
+            this.btnAddServices.Location = new System.Drawing.Point(212, 3);
             this.btnAddServices.Name = "btnAddServices";
-            this.btnAddServices.Size = new System.Drawing.Size(94, 67);
+            this.btnAddServices.Size = new System.Drawing.Size(94, 52);
             this.btnAddServices.TabIndex = 2;
             this.btnAddServices.Text = "Thêm dịch vụ";
             this.btnAddServices.UseVisualStyleBackColor = true;
@@ -272,7 +262,7 @@
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(3, 3);
+            this.cbCategory.Location = new System.Drawing.Point(3, 5);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(203, 23);
             this.cbCategory.TabIndex = 0;
@@ -281,6 +271,7 @@
             // flpRoom
             // 
             this.flpRoom.AutoScroll = true;
+            this.flpRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpRoom.Controls.Add(this.listView1);
             this.flpRoom.Location = new System.Drawing.Point(12, 127);
             this.flpRoom.Name = "flpRoom";
@@ -297,25 +288,34 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SVN-Gilroy XBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(231, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 19);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.FPTnew;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 45);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(230, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(236, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(313, 27);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(230, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Giảm giá:";
             // 
             // frmManager
             // 
@@ -361,7 +361,6 @@
         private System.Windows.Forms.Button btnAddServices;
         private System.Windows.Forms.FlowLayoutPanel flpRoom;
         private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.NumericUpDown numDiscount;
         private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.Button btnSwitchRoom;
@@ -374,7 +373,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbService;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
