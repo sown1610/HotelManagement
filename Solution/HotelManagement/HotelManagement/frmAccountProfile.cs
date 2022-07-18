@@ -39,24 +39,38 @@ namespace HotelManagement
             string reenterpass = txtReNewPass.Text;
             string userName = txtUser.Text;
 
+            if (String.IsNullOrEmpty(password.Trim()))
+            {
+                MessageBox.Show("Hãy nhập mật khẩu để xác nhận thao tác!");
+                return;
+            }
+            if (String.IsNullOrEmpty(displayName.Trim()))
+            {
+                MessageBox.Show("Tên hiển thị không được để trống");
+                return;
+            }
             if (!newpass.Equals(reenterpass))
             {
-                MessageBox.Show("Vui lòng nhập lại mật khẩu đúng với mật khẩu mới !");
+                MessageBox.Show("Mật khẩu mới không trùng khớp!");
             }
             else
             {
-                if (AccountDAO.Instance.UpdateAccount(userName, displayName, password, newpass))
+                if (MessageBox.Show(string.Format("Bạn có thực sự muốn cập nhật các thông tin trên?"), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    MessageBox.Show("Cập nhật thành công");
-                    if(updateAccount!=null)
+                    if (AccountDAO.Instance.UpdateAccount(userName,displayName,password,newpass))
                     {
-                        updateAccount(this,new AccountEvent( AccountDAO.Instance.GetAccountByUserName(userName)));
+                        MessageBox.Show("Cập nhật thành công");
                     }
+                    else
+                    {
+                        MessageBox.Show("Hãy điền đúng thông tin");
+                    }
+                    ChangeAccount(LoginAccount);
+                    txtPass.Clear();
+                    txtNewPass.Clear();
+                    txtReNewPass.Clear();
                 }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập đúng mật khẩu");
-                }
+
             }
         }
         private event EventHandler<AccountEvent> updateAccount;
@@ -82,6 +96,11 @@ namespace HotelManagement
         }
 
         private void frmAccountProfile_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
 
         }
