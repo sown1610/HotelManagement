@@ -30,6 +30,7 @@ namespace HotelManagement.DAO
                 Category category = new Category(item);
                 list.Add(category);
             }
+            
             return list;
         }
         public int GetCategoryIDByCategoryName(string name)

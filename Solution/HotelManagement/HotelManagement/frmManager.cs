@@ -42,8 +42,10 @@ namespace HotelManagement
         void LoadCategory()
         {
             List<Category> categoryList = CategoryDAO.Instance.GetListCategory();
-            cbCategory.Items.Add("All");
+            
+
             cbCategory.DataSource = categoryList;
+           
             cbCategory.DisplayMember = "categoryname";
 
         }
@@ -270,7 +272,6 @@ namespace HotelManagement
         #endregion
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             int id = 0;
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
@@ -279,7 +280,15 @@ namespace HotelManagement
             }
             Category selected = cb.SelectedItem as Category;
             id = selected.CategoryID;
-            LoadRoomByCategoryID(id);
+            if(id == 1)
+            {
+                LoadRoom();
+            }
+            else
+            {
+                LoadRoomByCategoryID(id);
+            }
+            
         }
 
         private void btnAddServices_Click(object sender, EventArgs e)
