@@ -33,14 +33,14 @@ namespace HotelManagement
         {
             dtgServices.DataSource = serviceList;
             dtgAccount.DataSource = accountList;
-
+            dtgRoom.DataSource = roomlist;
             LoadDateTimePickerOrder();
             LoadListOrderByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListService();
             AddServiceBinding();
             LoadListRoom();
             LoadAccount();
-            addRoomBinding();
+            AddRoomBinding();
             AddAccountBinding();
             loadListCategory();
             LoadCategoryIntoCombobox(cbRoomCategory);
@@ -145,15 +145,14 @@ namespace HotelManagement
         #region Room
         void LoadListRoom()
         {
-            dtgRoom.DataSource = RoomDAO.Instance.GetListRoom();
+            roomlist.DataSource = RoomDAO.Instance.GetListRoom();
 
         }
-        void addRoomBinding()
+        void AddRoomBinding()
         {
             txtroomname.DataBindings.Add(new Binding("Text", dtgRoom.DataSource, "roomname", true, DataSourceUpdateMode.Never));
             txtroomid.DataBindings.Add(new Binding("Text", dtgRoom.DataSource, "roomid", true, DataSourceUpdateMode.Never));
             numRoomPrice.DataBindings.Add(new Binding("Value", dtgRoom.DataSource, "roomprice", true, DataSourceUpdateMode.Never));
-
         }
 
         #endregion
@@ -295,6 +294,7 @@ namespace HotelManagement
         #region Room
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
+            LoadListRoom();
             string name = txtroomname.Text;
             int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
             float price = (float)numRoomPrice.Value;
@@ -328,7 +328,7 @@ namespace HotelManagement
         }
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
-            
+            LoadListRoom();
             int roomid = Convert.ToInt32(txtroomid.Text);
             if (RoomDAO.Instance.DeleteRoom(roomid))
             {
@@ -338,6 +338,7 @@ namespace HotelManagement
             else
             {
                 MessageBox.Show("Có lỗi khi Delete rồi đần ");
+               
             }
         }
         #endregion

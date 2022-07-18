@@ -245,7 +245,9 @@ namespace HotelManagement
         #endregion
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             int id = 0;
+            
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
             {
@@ -313,7 +315,7 @@ namespace HotelManagement
                     }
                     else
                     {
-                        if (MessageBox.Show(String.Format("Bạn có muốn thanh toán cho bàn {0}\n Tổng tiền (Đã bao gồm giảm giá)= {0}đ" +
+                        if (MessageBox.Show(String.Format("Bạn có muốn thanh toán cho  {0}\n Tổng tiền (Đã bao gồm giảm giá)= {0}đ" +
                             room.Roomname, text), "Thông báo", MessageBoxButtons.OKCancel
                             ) == DialogResult.OK) ;
                         {
@@ -342,7 +344,7 @@ namespace HotelManagement
 
             int id1 = (listBill.Tag as Room).Roomid;
             int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
-            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển bàn {0} qua bàn {1} không ?",
+            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua  {1} không ?",
                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
                 "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             RoomDAO.Instance.SwitchRoom(id1, id2);
