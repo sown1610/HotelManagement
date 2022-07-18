@@ -33,6 +33,19 @@ namespace HotelManagement.DAO
             
             return list;
         }
+        public List<Category> GetListCategoryWithoutAll()
+        {
+            List<Category> list = new List<Category>();
+            string query = "select * from RoomCategory where categoryid > 2";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Category category = new Category(item);
+                list.Add(category);
+            }
+
+            return list;
+        }
         public Category GetCategoryByID(int id)
         {
             Category category = null ;

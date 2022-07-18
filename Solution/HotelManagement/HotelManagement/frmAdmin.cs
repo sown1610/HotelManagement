@@ -171,19 +171,21 @@ namespace HotelManagement
         #region Category
         void loadCategoryToComboBox(ComboBox cb)
         {
-            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DataSource = CategoryDAO.Instance.GetListCategoryWithoutAll();
             cb.DisplayMember = "categoryname";
             cb.Refresh();
         }
         void LoadCategoryIntoCombobox(ComboBox cb)
         {
 
-            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DataSource = CategoryDAO.Instance.GetListCategoryWithoutAll();
             cb.DisplayMember = "categoryname";
         }
         void loadListCategory()
         {
-            dtgCategories.DataSource = CategoryDAO.instance.GetListCategory();
+            
+            dtgCategories.DataSource = CategoryDAO.instance.GetListCategoryWithoutAll();
+            
             categoryList.DataSource = CategoryDAO.instance.GetListCategory();
             txtCategoryID.DataBindings.Clear();
             txtCategoryName.DataBindings.Clear();
@@ -359,11 +361,17 @@ namespace HotelManagement
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             string name = Regex.Replace(txtCategoryName.Text.Trim(), " {2,}", " ");
-
+            int idCategory = Convert.ToInt32(txtCategoryID.Text);
+            if (idCategory == 2)
+            {
+                MessageBox.Show("Không thể xóa mục này!!!");
+                return;
+            }
             if (MessageBox.Show(string.Format("Bạn có thực sự muốn xóa danh mục '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int idCategory = Convert.ToInt32(txtCategoryID.Text);
-                if (CategoryDAO.Instance.DeleteCategory(idCategory))
+                
+                
+                if  (CategoryDAO.Instance.DeleteCategory(idCategory))
                 {
                     MessageBox.Show("Xóa thành công");
                     loadListCategory();
@@ -376,6 +384,7 @@ namespace HotelManagement
                 {
                     MessageBox.Show("Có lỗi khi xóa");
                 }
+
             }
             LoadListRoom();
             loadCategoryToComboBox(cbRoomCategory);
@@ -668,6 +677,26 @@ namespace HotelManagement
                 cbRoomCategory.SelectedIndex = index;
 
             }
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtgRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbRoomCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

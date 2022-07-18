@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbPass = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbPass);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel4);
@@ -59,13 +61,24 @@
             this.panel1.Size = new System.Drawing.Size(460, 237);
             this.panel1.TabIndex = 4;
             // 
+            // cbPass
+            // 
+            this.cbPass.AutoSize = true;
+            this.cbPass.Location = new System.Drawing.Point(108, 153);
+            this.cbPass.Name = "cbPass";
+            this.cbPass.Size = new System.Drawing.Size(121, 19);
+            this.cbPass.TabIndex = 12;
+            this.cbPass.Text = "Hiển thị mật khẩu";
+            this.cbPass.UseVisualStyleBackColor = true;
+            this.cbPass.CheckedChanged += new System.EventHandler(this.cbPass_CheckedChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SVN-Gilroy XBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(219, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 19);
+            this.label3.Size = new System.Drawing.Size(216, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
             // 
@@ -83,7 +96,7 @@
             // 
             this.panel4.Controls.Add(this.btnExit);
             this.panel4.Controls.Add(this.btnLogin);
-            this.panel4.Location = new System.Drawing.Point(3, 198);
+            this.panel4.Location = new System.Drawing.Point(3, 181);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(454, 36);
             this.panel4.TabIndex = 8;
@@ -100,7 +113,8 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("SVN-Gilroy Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.ForeColor = System.Drawing.Color.Chocolate;
             this.btnLogin.Location = new System.Drawing.Point(100, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 30);
@@ -113,14 +127,14 @@
             // 
             this.panel3.Controls.Add(this.txtPass);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 131);
+            this.panel3.Location = new System.Drawing.Point(3, 112);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(451, 61);
+            this.panel3.Size = new System.Drawing.Size(451, 32);
             this.panel3.TabIndex = 6;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(105, 14);
+            this.txtPass.Location = new System.Drawing.Point(105, 3);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(343, 23);
             this.txtPass.TabIndex = 2;
@@ -130,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 17);
+            this.label2.Location = new System.Drawing.Point(11, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 0;
@@ -140,14 +154,14 @@
             // 
             this.panel2.Controls.Add(this.txtUser);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 64);
+            this.panel2.Location = new System.Drawing.Point(3, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(451, 61);
+            this.panel2.Size = new System.Drawing.Size(451, 32);
             this.panel2.TabIndex = 5;
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(105, 14);
+            this.txtUser.Location = new System.Drawing.Point(105, 3);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(343, 23);
             this.txtUser.TabIndex = 1;
@@ -156,7 +170,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 17);
+            this.label1.Location = new System.Drawing.Point(11, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 15);
             this.label1.TabIndex = 0;
@@ -169,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.ClientSize = new System.Drawing.Size(484, 241);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
@@ -203,5 +217,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbPass;
     }
 }

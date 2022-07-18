@@ -68,6 +68,11 @@
             this.dtgCategories = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnViewServices = new System.Windows.Forms.Button();
+            this.btnUpdateServices = new System.Windows.Forms.Button();
+            this.btnDeleteServices = new System.Windows.Forms.Button();
+            this.btnAddServices = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -84,11 +89,6 @@
             this.btnSearchServices = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgServices = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnViewServices = new System.Windows.Forms.Button();
-            this.btnUpdateServices = new System.Windows.Forms.Button();
-            this.btnDeleteServices = new System.Windows.Forms.Button();
-            this.btnAddServices = new System.Windows.Forms.Button();
             this.tcAccount = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgvOrder = new System.Windows.Forms.DataGridView();
@@ -118,9 +118,6 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.btnSearchAccount = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
@@ -139,6 +136,7 @@
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategories)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -148,7 +146,6 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgServices)).BeginInit();
-            this.panel4.SuspendLayout();
             this.tcAccount.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvOrder)).BeginInit();
@@ -162,7 +159,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmTypeAcc)).BeginInit();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -184,16 +180,17 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(586, 17);
+            this.label17.Location = new System.Drawing.Point(194, 23);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(189, 25);
             this.label17.TabIndex = 19;
             this.label17.Text = "QUẢN LÝ PHÒNG";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::HotelManagement.Properties.Resources.FPTnew;
-            this.pictureBox3.Location = new System.Drawing.Point(383, 7);
+            this.pictureBox3.Location = new System.Drawing.Point(8, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(167, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -206,7 +203,7 @@
             this.panel18.Controls.Add(this.btnUpdateRoom);
             this.panel18.Controls.Add(this.btnDeleteRoom);
             this.panel18.Controls.Add(this.btnAddRoom);
-            this.panel18.Location = new System.Drawing.Point(8, 7);
+            this.panel18.Location = new System.Drawing.Point(436, 7);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(369, 52);
             this.panel18.TabIndex = 10;
@@ -318,6 +315,7 @@
             this.cbRoomCategory.Name = "cbRoomCategory";
             this.cbRoomCategory.Size = new System.Drawing.Size(221, 23);
             this.cbRoomCategory.TabIndex = 1;
+            this.cbRoomCategory.SelectedIndexChanged += new System.EventHandler(this.cbRoomCategory_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -389,10 +387,12 @@
             this.dtgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoom.Location = new System.Drawing.Point(6, 65);
             this.dtgRoom.Name = "dtgRoom";
+            this.dtgRoom.ReadOnly = true;
             this.dtgRoom.RowHeadersWidth = 51;
             this.dtgRoom.RowTemplate.Height = 25;
             this.dtgRoom.Size = new System.Drawing.Size(432, 332);
             this.dtgRoom.TabIndex = 10;
+            this.dtgRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRoom_CellContentClick);
             // 
             // tabPage3
             // 
@@ -413,7 +413,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(569, 16);
+            this.label16.Location = new System.Drawing.Point(174, 23);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(227, 25);
             this.label16.TabIndex = 17;
@@ -422,7 +422,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::HotelManagement.Properties.Resources.FPTnew;
-            this.pictureBox2.Location = new System.Drawing.Point(383, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(167, 57);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -435,9 +435,9 @@
             this.panel16.Controls.Add(this.btnUpdateCategory);
             this.panel16.Controls.Add(this.btnDeleteCategory);
             this.panel16.Controls.Add(this.btnAddCategory);
-            this.panel16.Location = new System.Drawing.Point(8, 6);
+            this.panel16.Location = new System.Drawing.Point(433, 6);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(369, 52);
+            this.panel16.Size = new System.Drawing.Size(347, 52);
             this.panel16.TabIndex = 8;
             // 
             // btnViewCategory
@@ -448,7 +448,7 @@
             this.btnViewCategory.Name = "btnViewCategory";
             this.btnViewCategory.Size = new System.Drawing.Size(78, 46);
             this.btnViewCategory.TabIndex = 7;
-            this.btnViewCategory.Text = "Xem";
+            this.btnViewCategory.Text = "Làm mới";
             this.btnViewCategory.UseVisualStyleBackColor = true;
             // 
             // btnUpdateCategory
@@ -556,19 +556,21 @@
             this.dtgCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCategories.Location = new System.Drawing.Point(8, 68);
             this.dtgCategories.Name = "dtgCategories";
+            this.dtgCategories.ReadOnly = true;
             this.dtgCategories.RowHeadersWidth = 51;
             this.dtgCategories.RowTemplate.Height = 25;
             this.dtgCategories.Size = new System.Drawing.Size(432, 332);
             this.dtgCategories.TabIndex = 7;
+            this.dtgCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCategories_CellContentClick);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.panel7);
             this.tabPage2.Controls.Add(this.panel6);
             this.tabPage2.Controls.Add(this.panel5);
-            this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -581,16 +583,75 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(573, 16);
+            this.label15.Location = new System.Drawing.Point(197, 21);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(200, 25);
             this.label15.TabIndex = 15;
             this.label15.Text = "QUẢN LÝ DỊCH VỤ";
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnViewServices);
+            this.panel4.Controls.Add(this.btnUpdateServices);
+            this.panel4.Controls.Add(this.btnDeleteServices);
+            this.panel4.Controls.Add(this.btnAddServices);
+            this.panel4.Location = new System.Drawing.Point(425, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(352, 52);
+            this.panel4.TabIndex = 0;
+            // 
+            // btnViewServices
+            // 
+            this.btnViewServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnViewServices.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.btnViewServices.Location = new System.Drawing.Point(255, 3);
+            this.btnViewServices.Name = "btnViewServices";
+            this.btnViewServices.Size = new System.Drawing.Size(78, 46);
+            this.btnViewServices.TabIndex = 7;
+            this.btnViewServices.Text = "Xem";
+            this.btnViewServices.UseVisualStyleBackColor = true;
+            this.btnViewServices.Click += new System.EventHandler(this.btnViewServices_Click);
+            // 
+            // btnUpdateServices
+            // 
+            this.btnUpdateServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateServices.ForeColor = System.Drawing.Color.Sienna;
+            this.btnUpdateServices.Location = new System.Drawing.Point(87, 3);
+            this.btnUpdateServices.Name = "btnUpdateServices";
+            this.btnUpdateServices.Size = new System.Drawing.Size(78, 46);
+            this.btnUpdateServices.TabIndex = 6;
+            this.btnUpdateServices.Text = "Sửa";
+            this.btnUpdateServices.UseVisualStyleBackColor = true;
+            this.btnUpdateServices.Click += new System.EventHandler(this.btnUpdateServices_Click);
+            // 
+            // btnDeleteServices
+            // 
+            this.btnDeleteServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteServices.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnDeleteServices.Location = new System.Drawing.Point(171, 3);
+            this.btnDeleteServices.Name = "btnDeleteServices";
+            this.btnDeleteServices.Size = new System.Drawing.Size(78, 46);
+            this.btnDeleteServices.TabIndex = 5;
+            this.btnDeleteServices.Text = "Xóa";
+            this.btnDeleteServices.UseVisualStyleBackColor = true;
+            this.btnDeleteServices.Click += new System.EventHandler(this.btnDeleteServices_Click);
+            // 
+            // btnAddServices
+            // 
+            this.btnAddServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnAddServices.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnAddServices.Location = new System.Drawing.Point(3, 3);
+            this.btnAddServices.Name = "btnAddServices";
+            this.btnAddServices.Size = new System.Drawing.Size(78, 46);
+            this.btnAddServices.TabIndex = 4;
+            this.btnAddServices.Text = "Thêm";
+            this.btnAddServices.UseVisualStyleBackColor = true;
+            this.btnAddServices.Click += new System.EventHandler(this.btnAddServices_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.FPTnew;
-            this.pictureBox1.Location = new System.Drawing.Point(383, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(167, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -603,9 +664,9 @@
             this.panel7.Controls.Add(this.panel11);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(450, 166);
+            this.panel7.Location = new System.Drawing.Point(450, 130);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(325, 172);
+            this.panel7.Size = new System.Drawing.Size(325, 208);
             this.panel7.TabIndex = 2;
             // 
             // panel11
@@ -698,7 +759,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.txtServicesSearchName);
             this.panel6.Controls.Add(this.btnSearchServices);
-            this.panel6.Location = new System.Drawing.Point(449, 69);
+            this.panel6.Location = new System.Drawing.Point(452, 69);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(325, 55);
             this.panel6.TabIndex = 1;
@@ -736,69 +797,11 @@
             this.dtgServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgServices.Location = new System.Drawing.Point(3, 3);
             this.dtgServices.Name = "dtgServices";
+            this.dtgServices.ReadOnly = true;
             this.dtgServices.RowHeadersWidth = 51;
             this.dtgServices.RowTemplate.Height = 25;
             this.dtgServices.Size = new System.Drawing.Size(432, 332);
             this.dtgServices.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnViewServices);
-            this.panel4.Controls.Add(this.btnUpdateServices);
-            this.panel4.Controls.Add(this.btnDeleteServices);
-            this.panel4.Controls.Add(this.btnAddServices);
-            this.panel4.Location = new System.Drawing.Point(8, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(369, 52);
-            this.panel4.TabIndex = 0;
-            // 
-            // btnViewServices
-            // 
-            this.btnViewServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnViewServices.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.btnViewServices.Location = new System.Drawing.Point(255, 3);
-            this.btnViewServices.Name = "btnViewServices";
-            this.btnViewServices.Size = new System.Drawing.Size(78, 46);
-            this.btnViewServices.TabIndex = 7;
-            this.btnViewServices.Text = "Xem";
-            this.btnViewServices.UseVisualStyleBackColor = true;
-            this.btnViewServices.Click += new System.EventHandler(this.btnViewServices_Click);
-            // 
-            // btnUpdateServices
-            // 
-            this.btnUpdateServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnUpdateServices.ForeColor = System.Drawing.Color.Sienna;
-            this.btnUpdateServices.Location = new System.Drawing.Point(87, 3);
-            this.btnUpdateServices.Name = "btnUpdateServices";
-            this.btnUpdateServices.Size = new System.Drawing.Size(78, 46);
-            this.btnUpdateServices.TabIndex = 6;
-            this.btnUpdateServices.Text = "Sửa";
-            this.btnUpdateServices.UseVisualStyleBackColor = true;
-            this.btnUpdateServices.Click += new System.EventHandler(this.btnUpdateServices_Click);
-            // 
-            // btnDeleteServices
-            // 
-            this.btnDeleteServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteServices.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnDeleteServices.Location = new System.Drawing.Point(171, 3);
-            this.btnDeleteServices.Name = "btnDeleteServices";
-            this.btnDeleteServices.Size = new System.Drawing.Size(78, 46);
-            this.btnDeleteServices.TabIndex = 5;
-            this.btnDeleteServices.Text = "Xóa";
-            this.btnDeleteServices.UseVisualStyleBackColor = true;
-            this.btnDeleteServices.Click += new System.EventHandler(this.btnDeleteServices_Click);
-            // 
-            // btnAddServices
-            // 
-            this.btnAddServices.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnAddServices.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnAddServices.Location = new System.Drawing.Point(3, 3);
-            this.btnAddServices.Name = "btnAddServices";
-            this.btnAddServices.Size = new System.Drawing.Size(78, 46);
-            this.btnAddServices.TabIndex = 4;
-            this.btnAddServices.Text = "Thêm";
-            this.btnAddServices.UseVisualStyleBackColor = true;
-            this.btnAddServices.Click += new System.EventHandler(this.btnAddServices_Click);
             // 
             // tcAccount
             // 
@@ -831,6 +834,7 @@
             this.dtgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvOrder.Location = new System.Drawing.Point(6, 63);
             this.dtgvOrder.Name = "dtgvOrder";
+            this.dtgvOrder.ReadOnly = true;
             this.dtgvOrder.RowHeadersWidth = 51;
             this.dtgvOrder.RowTemplate.Height = 25;
             this.dtgvOrder.Size = new System.Drawing.Size(768, 341);
@@ -852,7 +856,7 @@
             // 
             this.btnViewOrder.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnViewOrder.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnViewOrder.Location = new System.Drawing.Point(515, 9);
+            this.btnViewOrder.Location = new System.Drawing.Point(518, 9);
             this.btnViewOrder.Name = "btnViewOrder";
             this.btnViewOrder.Size = new System.Drawing.Size(98, 36);
             this.btnViewOrder.TabIndex = 5;
@@ -864,6 +868,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(256, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 19);
@@ -874,6 +879,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(3, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 19);
@@ -901,7 +907,6 @@
             this.tabPage5.Controls.Add(this.panel24);
             this.tabPage5.Controls.Add(this.dtgAccount);
             this.tabPage5.Controls.Add(this.panel1);
-            this.tabPage5.Controls.Add(this.panel23);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -913,17 +918,17 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(565, 16);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(190, 26);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(230, 25);
+            this.label18.Size = new System.Drawing.Size(194, 20);
             this.label18.TabIndex = 21;
             this.label18.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::HotelManagement.Properties.Resources.FPTnew;
-            this.pictureBox4.Location = new System.Drawing.Point(389, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(8, 6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(167, 57);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -936,7 +941,7 @@
             this.panel24.Controls.Add(this.btnUpdateAccount);
             this.panel24.Controls.Add(this.btnDeleteAccount);
             this.panel24.Controls.Add(this.btnAddAccount);
-            this.panel24.Location = new System.Drawing.Point(8, 6);
+            this.panel24.Location = new System.Drawing.Point(436, 6);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(369, 52);
             this.panel24.TabIndex = 11;
@@ -995,6 +1000,7 @@
             this.dtgAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgAccount.Location = new System.Drawing.Point(7, 68);
             this.dtgAccount.Name = "dtgAccount";
+            this.dtgAccount.ReadOnly = true;
             this.dtgAccount.RowHeadersWidth = 51;
             this.dtgAccount.RowTemplate.Height = 25;
             this.dtgAccount.Size = new System.Drawing.Size(432, 332);
@@ -1007,7 +1013,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel21);
             this.panel1.Controls.Add(this.panel22);
-            this.panel1.Location = new System.Drawing.Point(450, 152);
+            this.panel1.Location = new System.Drawing.Point(445, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 224);
             this.panel1.TabIndex = 6;
@@ -1020,7 +1026,7 @@
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(313, 46);
             this.btnResetPassword.TabIndex = 8;
-            this.btnResetPassword.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword.Text = "Đặt lại mật khẩu thành \"0\"";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
@@ -1107,34 +1113,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Tên tài khoản:";
             // 
-            // panel23
-            // 
-            this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel23.Controls.Add(this.textBox5);
-            this.panel23.Controls.Add(this.btnSearchAccount);
-            this.panel23.Location = new System.Drawing.Point(450, 81);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(325, 52);
-            this.panel23.TabIndex = 5;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(4, 16);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(227, 23);
-            this.textBox5.TabIndex = 9;
-            // 
-            // btnSearchAccount
-            // 
-            this.btnSearchAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnSearchAccount.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.btnSearchAccount.Location = new System.Drawing.Point(237, 2);
-            this.btnSearchAccount.Name = "btnSearchAccount";
-            this.btnSearchAccount.Size = new System.Drawing.Size(78, 46);
-            this.btnSearchAccount.TabIndex = 8;
-            this.btnSearchAccount.Text = "Tìm";
-            this.btnSearchAccount.UseVisualStyleBackColor = true;
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1171,6 +1149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategories)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -1184,7 +1163,6 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgServices)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.tcAccount.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvOrder)).EndInit();
@@ -1203,8 +1181,6 @@
             this.panel21.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1276,9 +1252,6 @@
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button btnSearchAccount;
         private System.Windows.Forms.NumericUpDown numRoomPrice;
         private System.Windows.Forms.NumericUpDown nmTypeAcc;
         private System.Windows.Forms.Panel panel18;

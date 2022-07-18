@@ -65,5 +65,19 @@ namespace HotelManagement
         {
 
         }
+
+        private void cbPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPass.Checked)
+            {
+                txtPass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+            }
+        }
+
+        
     }
 }

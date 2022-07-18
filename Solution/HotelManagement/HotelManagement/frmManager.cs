@@ -280,7 +280,7 @@ namespace HotelManagement
             }
             Category selected = cb.SelectedItem as Category;
             id = selected.CategoryID;
-            if(id == 1)
+            if(id == 2)
             {
                 LoadRoom();
             }
