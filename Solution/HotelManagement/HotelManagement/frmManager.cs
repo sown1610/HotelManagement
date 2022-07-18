@@ -353,12 +353,27 @@ namespace HotelManagement
         private void btnSwitchRoom_Click(object sender, EventArgs e)
         {
 
-            int id1 = (listBill.Tag as Room).Roomid;
+            Room room = listBill.Tag as Room;
+
+            if (room == null)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần chuyển ạ!!!");
+                return;
+            }
+            int? id1 = room.Roomid;
+            Room room2 = cbSwitchTable.SelectedItem as Room;
+            //chưa xong
+            string status = room2.Status.ToString().Trim();
+            if (status.Equals("Có Người"))
+            {
+                MessageBox.Show("Vui lòng chọn phòng trống!!!");
+                return;
+            }
             int id2 = (cbSwitchTable.SelectedItem as Room).Roomid;
-            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua  {1} không ?",
+            if (MessageBox.Show(String.Format("Bạn có thực sự muốn chuyển {0} qua {1} không ?",
                 (listBill.Tag as Room).Roomname, (cbSwitchTable.SelectedItem as Room).Roomname),
-                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
-            RoomDAO.Instance.SwitchRoom(id1, id2);
+                "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK);
+            RoomDAO.Instance.SwitchRoom(room.Roomid, id2);
             LoadRoom();
         }
         void LoadComboboxRoom(ComboBox cb)

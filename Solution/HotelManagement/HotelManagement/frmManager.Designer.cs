@@ -40,28 +40,29 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSwitchRoom = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.numDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cbService = new System.Windows.Forms.ComboBox();
-            this.btnAddServices = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpRoom = new System.Windows.Forms.FlowLayoutPanel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAddServices = new System.Windows.Forms.Button();
+            this.cbService = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).BeginInit();
-            this.panel4.SuspendLayout();
             this.flpRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -168,6 +169,15 @@
             this.panel3.Size = new System.Drawing.Size(401, 61);
             this.panel3.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(230, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Giảm giá:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -229,42 +239,12 @@
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.cbService);
-            this.panel4.Controls.Add(this.btnAddServices);
-            this.panel4.Controls.Add(this.cbCategory);
-            this.panel4.Location = new System.Drawing.Point(563, 54);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 67);
-            this.panel4.TabIndex = 2;
-            // 
-            // cbService
-            // 
-            this.cbService.FormattingEnabled = true;
-            this.cbService.Location = new System.Drawing.Point(3, 34);
-            this.cbService.Name = "cbService";
-            this.cbService.Size = new System.Drawing.Size(203, 23);
-            this.cbService.TabIndex = 4;
-            // 
-            // btnAddServices
-            // 
-            this.btnAddServices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddServices.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnAddServices.Location = new System.Drawing.Point(212, 3);
-            this.btnAddServices.Name = "btnAddServices";
-            this.btnAddServices.Size = new System.Drawing.Size(94, 52);
-            this.btnAddServices.TabIndex = 2;
-            this.btnAddServices.Text = "Thêm dịch vụ";
-            this.btnAddServices.UseVisualStyleBackColor = true;
-            this.btnAddServices.Click += new System.EventHandler(this.btnAddServices_Click);
-            // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(3, 5);
+            this.cbCategory.Location = new System.Drawing.Point(91, 135);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(203, 23);
+            this.cbCategory.Size = new System.Drawing.Size(110, 23);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -273,9 +253,9 @@
             this.flpRoom.AutoScroll = true;
             this.flpRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpRoom.Controls.Add(this.listView1);
-            this.flpRoom.Location = new System.Drawing.Point(12, 127);
+            this.flpRoom.Location = new System.Drawing.Point(12, 165);
             this.flpRoom.Name = "flpRoom";
-            this.flpRoom.Size = new System.Drawing.Size(453, 422);
+            this.flpRoom.Size = new System.Drawing.Size(453, 384);
             this.flpRoom.TabIndex = 4;
             this.flpRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flpRoom_Paint);
             // 
@@ -308,22 +288,54 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(230, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Giảm giá:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(12, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Danh mục:";
+            // 
+            // btnAddServices
+            // 
+            this.btnAddServices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddServices.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnAddServices.Location = new System.Drawing.Point(229, 0);
+            this.btnAddServices.Name = "btnAddServices";
+            this.btnAddServices.Size = new System.Drawing.Size(94, 36);
+            this.btnAddServices.TabIndex = 2;
+            this.btnAddServices.Text = "Thêm dịch vụ";
+            this.btnAddServices.UseVisualStyleBackColor = true;
+            this.btnAddServices.Click += new System.EventHandler(this.btnAddServices_Click);
+            // 
+            // cbService
+            // 
+            this.cbService.FormattingEnabled = true;
+            this.cbService.Location = new System.Drawing.Point(3, 8);
+            this.cbService.Name = "cbService";
+            this.cbService.Size = new System.Drawing.Size(213, 23);
+            this.cbService.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.cbService);
+            this.panel4.Controls.Add(this.btnAddServices);
+            this.panel4.Location = new System.Drawing.Point(542, 82);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(330, 39);
+            this.panel4.TabIndex = 2;
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.flpRoom);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -340,9 +352,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiscount)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.flpRoom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,9 +368,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListView listBill;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.Button btnAddServices;
         private System.Windows.Forms.FlowLayoutPanel flpRoom;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.NumericUpDown numDiscount;
@@ -371,10 +381,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbService;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAddServices;
+        private System.Windows.Forms.ComboBox cbService;
+        private System.Windows.Forms.Panel panel4;
     }
 }
