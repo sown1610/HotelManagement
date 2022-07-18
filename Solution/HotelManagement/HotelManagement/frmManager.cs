@@ -296,7 +296,7 @@ namespace HotelManagement
 
             Room? room = listBill.Tag as Room;
             int id =int.Parse(cbCategory.SelectedIndex.ToString()) ;
-
+            int rid = room.Categoryid;
             if (room == null)
             {
                 MessageBox.Show("Vui long chon mot phong!!");
@@ -322,7 +322,7 @@ namespace HotelManagement
             }
             else
             {
-                LoadRoomByCategoryID(id);
+                LoadRoomByCategoryID(rid);
 
             }
         }
