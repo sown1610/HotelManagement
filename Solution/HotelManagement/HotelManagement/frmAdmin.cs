@@ -419,6 +419,7 @@ namespace HotelManagement
 
         private void btnUpdateRoom_Click(object sender, EventArgs e)
         {
+
             string name = txtroomname.Text;
             int cateid = (cbRoomCategory.SelectedItem as Category).CategoryID;
             float price = (float)numRoomPrice.Value;
@@ -430,7 +431,7 @@ namespace HotelManagement
             }
             else
             {
-                MessageBox.Show("Có lỗi khi thêm rồi đần ");
+                MessageBox.Show("Có lỗi khi thêm rồi ngu ");
             }
         }
         private void btnDeleteRoom_Click(object sender, EventArgs e)
@@ -657,7 +658,7 @@ namespace HotelManagement
                 int i = 0;
                 foreach (Category item in cbRoomCategory.Items)
                 {
-                    if (item.CategoryID + 1 == category.CategoryID)
+                    if (item.CategoryID  == category.CategoryID)
                     {
                         index = i;
                         break;
