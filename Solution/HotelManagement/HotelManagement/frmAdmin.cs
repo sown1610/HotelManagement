@@ -128,6 +128,7 @@ namespace HotelManagement
         }
         void LoadCategoryIntoCombobox(ComboBox cb)
         {
+
             cb.DataSource = CategoryDAO.Instance.GetListCategory();
             cb.DisplayMember = "categoryname";
         }
@@ -140,6 +141,7 @@ namespace HotelManagement
             txtCategoryID.DataBindings.Add(new Binding("Text", dtgCategories.DataSource, "categoryid", true, DataSourceUpdateMode.Never));
             txtCategoryName.DataBindings.Add(new Binding("Text", dtgCategories.DataSource, "categoryname", true, DataSourceUpdateMode.Never));
         }
+
         #endregion
 
         #region Room
@@ -555,6 +557,39 @@ namespace HotelManagement
         private void cbRoomCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbRoomCategory_TextChanged(object sender, EventArgs e)
+        {
+          
+           
+        }
+
+        private void txtroomid_TextChanged(object sender, EventArgs e)
+        {
+            if (dtgRoom.SelectedCells.Count > 0)
+            {
+                int id = (int)dtgRoom.SelectedCells[1].OwningRow.Cells["categoryid"].Value;
+
+                Category category = CategoryDAO.Instance.GetCategoryByID(id);
+
+                cbRoomCategory.SelectedItem = category;
+
+                int index = -1;
+                int i = 0;
+                foreach (Category item in cbRoomCategory.Items)
+                {
+                    if (item.CategoryID +1== category.CategoryID)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+
+                }
+                cbRoomCategory.SelectedItem = index;
+
+            }
         }
     }
 }

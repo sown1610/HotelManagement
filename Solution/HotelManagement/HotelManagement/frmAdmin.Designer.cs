@@ -183,10 +183,10 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(586, 17);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(169, 27);
+            this.label17.Size = new System.Drawing.Size(189, 25);
             this.label17.TabIndex = 19;
             this.label17.Text = "QUẢN LÝ PHÒNG";
             // 
@@ -319,6 +319,7 @@
             this.cbRoomCategory.Size = new System.Drawing.Size(221, 23);
             this.cbRoomCategory.TabIndex = 1;
             this.cbRoomCategory.SelectedIndexChanged += new System.EventHandler(this.cbRoomCategory_SelectedIndexChanged);
+            this.cbRoomCategory.TextChanged += new System.EventHandler(this.cbRoomCategory_TextChanged);
             // 
             // label12
             // 
@@ -372,6 +373,7 @@
             this.txtroomid.ReadOnly = true;
             this.txtroomid.Size = new System.Drawing.Size(221, 23);
             this.txtroomid.TabIndex = 1;
+            this.txtroomid.TextChanged += new System.EventHandler(this.txtroomid_TextChanged);
             // 
             // label11
             // 
@@ -413,10 +415,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(569, 16);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(201, 27);
+            this.label16.Size = new System.Drawing.Size(227, 25);
             this.label16.TabIndex = 17;
             this.label16.Text = "QUẢN LÝ DANH MỤC";
             // 
@@ -581,10 +583,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(573, 16);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(177, 27);
+            this.label15.Size = new System.Drawing.Size(200, 25);
             this.label15.TabIndex = 15;
             this.label15.Text = "QUẢN LÝ DỊCH VỤ";
             // 
@@ -915,10 +917,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("SVN-Gilroy XBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(565, 16);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(203, 27);
+            this.label18.Size = new System.Drawing.Size(230, 25);
             this.label18.TabIndex = 21;
             this.label18.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
