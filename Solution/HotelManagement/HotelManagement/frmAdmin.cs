@@ -76,25 +76,30 @@ namespace HotelManagement
                 MessageBox.Show("Tên hiển thị không được để trống");
                 return;
             }
+          
             if (!containsLetter)
             {
                 MessageBox.Show("Định dạng 'Tên tài khoản' không hợp lệ");
                 return;
             }
-            if (AccountDAO.Instance.checkAccountExist(txtUsername.Text) == 1)
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn thêm tài khoản '{0}'\nTên hiển thị là '{1}'\nTài khoản sau khi được tạo sẽ không thể đổi 'Tên đăng nhập'", userName, disPlayname), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Không thể thêm tài khoản đã tồn tại");
-                return;
-            }
-            if (AccountDAO.Instance.InsertAccount(userName, disPlayname, type))
-            {
-                MessageBox.Show("Thêm tài khoản thành công");
-            }
-            else
-            {
-                MessageBox.Show("Thêm tài khoản thất bại");
+                if (AccountDAO.Instance.checkAccountExist(txtUsername.Text) == 1)
+                {
+                    MessageBox.Show("Không thể thêm tài khoản đã tồn tại");
+                    return;
+                }
+                if (AccountDAO.Instance.InsertAccount(userName, disPlayname, type))
+                {
+                    MessageBox.Show("Thêm tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại");
 
+                }
             }
+
             LoadAccount();
         }
         void EditAccount(string userName, string disPlayname, int type)
@@ -109,15 +114,20 @@ namespace HotelManagement
                 MessageBox.Show("Tên hiển thị không được để trống");
                 return;
             }
-            if (AccountDAO.Instance.UpdateAccount(userName, disPlayname, type))
+            if (MessageBox.Show(string.Format("Bạn có muốn sửa Tên hiển thị thành: '{0}'\n Loại tài khoản thành '{1}'", disPlayname, type), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Update tài khoản thành công");
-            }
-            else
-            {
-                MessageBox.Show("Update tài khoản thất bại");
+                if (AccountDAO.Instance.UpdateAccount(userName, disPlayname, type))
+                {
+                    MessageBox.Show("Update tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Update tài khoản thất bại");
+
+                }
 
             }
+
             LoadAccount();
         }
         void DeleteAccount(string userName)
@@ -127,6 +137,7 @@ namespace HotelManagement
                 MessageBox.Show("Không thể xóa tài khoản đang được đăng nhập");
                 return;
             }
+
             if (MessageBox.Show(string.Format("Bạn có muốn sửa xóa tài khoản '{0}'", userName), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (AccountDAO.Instance.DeleteAccount(userName))
@@ -135,23 +146,10 @@ namespace HotelManagement
                 }
                 else
                 {
-                    MessageBox.Show("Xóa nhật khoản thất bại!");
+                    MessageBox.Show("Xóa tài khoản thất bại!");
                 }
             }
-            //if (loginAccount.UserName.Equals(userName))
-            //{
-            //    MessageBox.Show("Đừng xóa chính bạn :))))");
-            //    return;
-            //}
-            //if (AccountDAO.Instance.DeleteAccount(userName))
-            //{
-            //    MessageBox.Show("Delete tài khoản thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Delete tài khoản thất bại");
 
-            //}
             LoadAccount();
         }
         void ResetPass(string username)
@@ -444,7 +442,7 @@ namespace HotelManagement
             {
                 MessageBox.Show("Phòng đã tồn tại");
             }
-            if (MessageBox.Show(string.Format("Bạn có thực sự muốn sửa tên bàn thành '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn sửa tên phòng thành '{0}'", name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (RoomDAO.Instance.UpdateRoom(roomid, name, cateid, price))
                 {
@@ -473,7 +471,7 @@ namespace HotelManagement
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi Delete rồi đần ");
+                    MessageBox.Show("Có lỗi khi Delete rồi sos");
 
                 }
             }
@@ -511,7 +509,7 @@ namespace HotelManagement
                 MessageBox.Show("Không thể thêm dịch vụ đã tồn tại");
                 return;
             }
-            if (MessageBox.Show(string.Format("Bạn có thực sự muốn thêm dichj vụ '{0}' vào danh mục '{1}'", name.Trim(), cbRoomCategory.GetItemText(this.cbRoomCategory.SelectedItem)), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn thêm dịch vụ '{0}' vào danh mục '{1}'", name.Trim(), cbRoomCategory.GetItemText(this.cbRoomCategory.SelectedItem)), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (ServiceDAO.Instance.InsertService(name.Trim(), price))
                 {
@@ -559,7 +557,7 @@ namespace HotelManagement
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi thêm rồi nguuuuuuuuuu ");
+                    MessageBox.Show("Có lỗi khi thêm rồi sos ");
                 }
             }
 
@@ -570,7 +568,7 @@ namespace HotelManagement
             string name = Regex.Replace(txtServicesName.Text.Trim(), " {2,}", " ");
 
             int serviceid = Convert.ToInt32(txtServicesID.Text);
-            if (MessageBox.Show(string.Format("Bạn có thực sự muốn xóa món '{0}' tại danh mục '{1}'", name, cbRoomCategory.GetItemText(this.cbRoomCategory.SelectedItem)), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn xóa dịch vụ '{0}' tại danh mục '{1}'", name, cbRoomCategory.GetItemText(this.cbRoomCategory.SelectedItem)), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (ServiceDAO.Instance.DeleteService(serviceid))
                 {
@@ -583,7 +581,7 @@ namespace HotelManagement
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi xóa rồi đần ");
+                    MessageBox.Show("Có lỗi khi xóa rồi sos ");
                 }
             }
 

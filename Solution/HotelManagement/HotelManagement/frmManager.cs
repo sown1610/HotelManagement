@@ -299,7 +299,7 @@ namespace HotelManagement
             int rid = room.Categoryid;
             if (room == null)
             {
-                MessageBox.Show("Vui long chon mot phong!!");
+                MessageBox.Show("Vui lòng chọn một phòng!!");
                 return;
             }
             int idOrder = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
@@ -342,7 +342,7 @@ namespace HotelManagement
             Room room = listBill.Tag as Room;
             if (room == null)
             {
-                MessageBox.Show("Vui long chon mot phong!!");
+                MessageBox.Show("Vui lòng chọn một phòng!!");
                 return;
             }
             int roomid = OrderDAO.Instance.GetUncheckBillIDByRoomID(room.Roomid);
@@ -365,7 +365,7 @@ namespace HotelManagement
                 {
                     if (listBill.Items.Count == 0)
                     {
-                        MessageBox.Show("eo co cai gi de thanh toan ca");
+                        MessageBox.Show("Không có cái gì để thanh toán cả sos");
                         return;
                     }
                     else
