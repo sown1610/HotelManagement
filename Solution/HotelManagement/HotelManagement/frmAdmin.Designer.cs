@@ -118,6 +118,7 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnCount = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
@@ -818,6 +819,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnCount);
             this.tabPage1.Controls.Add(this.dtgvOrder);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
@@ -839,6 +841,7 @@
             this.dtgvOrder.RowTemplate.Height = 25;
             this.dtgvOrder.Size = new System.Drawing.Size(768, 341);
             this.dtgvOrder.TabIndex = 3;
+            this.dtgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvOrder_CellContentClick);
             // 
             // panel3
             // 
@@ -1113,6 +1116,18 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Tên tài khoản:";
             // 
+            // btnCount
+            // 
+            this.btnCount.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnCount.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnCount.Location = new System.Drawing.Point(699, 15);
+            this.btnCount.Name = "btnCount";
+            this.btnCount.Size = new System.Drawing.Size(78, 36);
+            this.btnCount.TabIndex = 6;
+            this.btnCount.Text = "COUNT";
+            this.btnCount.UseVisualStyleBackColor = true;
+            this.btnCount.Click += new System.EventHandler(this.btnCount_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1277,5 +1292,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnCount;
     }
 }

@@ -36,7 +36,7 @@ namespace HotelManagement.DAO
         public List<Category> GetListCategoryWithoutAll()
         {
             List<Category> list = new List<Category>();
-            string query = "select * from RoomCategory where categoryid >= 2";
+            string query = "select * from RoomCategory where categoryid > 1";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

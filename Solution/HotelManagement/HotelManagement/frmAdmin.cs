@@ -242,7 +242,11 @@ namespace HotelManagement
             dtgvOrder.DataSource = OrderDAO.Instance.GetOrderListByDate(checkIn, checkOut);
 
         }
-
+        void OrderCount()
+        {
+            dtgvOrder.DataSource = OrderDAO.Instance.OrderCount();
+                
+        }
         #endregion
         #endregion
 
@@ -751,6 +755,16 @@ namespace HotelManagement
         private void cbRoomCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCount_Click(object sender, EventArgs e)
+        {
+            OrderCount();
         }
     }
 }

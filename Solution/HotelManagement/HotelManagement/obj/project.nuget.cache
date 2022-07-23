@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "VZ5VuXSicJWRFeLgeU3G8rMjDKOrFEJ1yFB3wf6H6x0hBrr82qU0ee/1GC0V+nSya9G+zVzUA1vI/+TCtQygQA==",
+  "success": true,
+  "projectFilePath": "D:\\FPTU\\Learning\\Ki5\\PRN211\\HotelManagement\\Solution\\HotelManagement\\HotelManagement\\HotelManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\microsoft.win32.registry\\4.4.0\\microsoft.win32.registry.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\system.data.sqlclient\\4.4.1\\system.data.sqlclient.4.4.1.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\system.security.accesscontrol\\4.4.0\\system.security.accesscontrol.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
+    "C:\\Users\\Sown_Laptop\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

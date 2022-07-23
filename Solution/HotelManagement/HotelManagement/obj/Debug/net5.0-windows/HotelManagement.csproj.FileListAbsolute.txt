@@ -113,3 +113,4 @@ F:\FPT\Learning\PRNProject\HotelManagement\Solution\HotelManagement\HotelManagem
 F:\FPT\Learning\PRNProject\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.genruntimeconfig.cache
 F:\FPT\Learning\PRNProject\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\ref\HotelManagement.dll
 C:\Users\phanl\source\repos\HotelManagement\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.Properties.Resources.resources
+D:\FPTU\Learning\Ki5\PRN211\HotelManagement\Solution\HotelManagement\HotelManagement\obj\Debug\net5.0-windows\HotelManagement.Properties.Resources.resources
